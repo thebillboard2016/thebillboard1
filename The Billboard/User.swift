@@ -18,7 +18,6 @@ class User
     var emailAddress: String
     var password: String
     
-    let x = 0
     
     // Initialization
     init?(username: String, emailAddress: String, password: String)
