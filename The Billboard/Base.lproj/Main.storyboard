@@ -94,8 +94,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="passwordField" destination="hc7-76-Lsn" id="HUh-UD-pec"/>
-                        <outlet property="usernameField" destination="XDP-Vd-pbi" id="86E-Fj-pk2"/>
+                        <outlet property="passwordLoginField" destination="hc7-76-Lsn" id="qam-Fi-fWA"/>
+                        <outlet property="usernameLoginField" destination="XDP-Vd-pbi" id="n2G-68-QL9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -258,7 +258,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UfX-hg-SQL">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password (at least 6 characters)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UfX-hg-SQL">
                                 <rect key="frame" x="46" y="241.5" width="283" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="UFM-cR-69H"/>

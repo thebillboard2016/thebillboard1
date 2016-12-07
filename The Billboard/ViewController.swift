@@ -11,9 +11,11 @@ import BuddySDK
 
 class ViewController: UIViewController {
     
+    
     // Properties
-    @IBOutlet weak var usernameField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var usernameLoginField: UITextField!
+    @IBOutlet weak var passwordLoginField: UITextField!
+    
     
     
     override func viewDidLoad() {
@@ -31,11 +33,14 @@ class ViewController: UIViewController {
     // Login (Button)
     @IBAction func loginButton(_ sender: UIButton) {
         
-        Buddy.loginUser(usernameField.text!, password: passwordField.text!, callback: nil)
+        // Log user in
         
         
+        Buddy.loginUser(usernameLoginField.text!, password: passwordLoginField.text!, callback: {BuddyObjectCallback in })
         
-   
+        //Buddy.loginUser(usernameLoginField.text!, password: passwordLoginField.text!, callback: {(id: Any?, error: NSError?) -> Void in })
+
+        
     }
     
     // Segue to Register View Controller
@@ -45,6 +50,7 @@ class ViewController: UIViewController {
     
     // Segues
     @IBAction func unwindToThisViewController(segue: UIStoryboardSegue) {
+        
     }
     
     
