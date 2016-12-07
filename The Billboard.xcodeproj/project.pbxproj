@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		088C8D132C23B8E33A0A7FC9 /* Pods_The_Billboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BCD87A95D4A48F253A43A90 /* Pods_The_Billboard.framework */; };
 		222D92A81DF655A80008C94D /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D92A71DF655A80008C94D /* ScrollViewController.swift */; };
 		2249DA201DF6020400D1FE5A /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2249DA1F1DF6020400D1FE5A /* CameraViewController.swift */; };
 		2253932C1DF08004002F69F6 /* postsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253932B1DF08004002F69F6 /* postsTableViewController.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EC7C0807E250C0EE959F9C1 /* Pods-The Billboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Billboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-The Billboard/Pods-The Billboard.release.xcconfig"; sourceTree = "<group>"; };
 		222D92A71DF655A80008C94D /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		2249DA1F1DF6020400D1FE5A /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = ../CameraViewController.swift; sourceTree = "<group>"; };
 		2253932B1DF08004002F69F6 /* postsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = postsTableViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,8 @@
 		46FBEEB61DEE568800BEB059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46FBEEC91DEE624000BEB059 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		46FBEECB1DEFC10B00BEB059 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7BCD87A95D4A48F253A43A90 /* Pods_The_Billboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Billboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB9CBAF9BFF50BD9DEA5DCCD /* Pods-The Billboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Billboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-The Billboard/Pods-The Billboard.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				088C8D132C23B8E33A0A7FC9 /* Pods_The_Billboard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +111,8 @@
 				46FBEEA81DEE568800BEB059 /* The BillboardTests */,
 				46FBEEB31DEE568800BEB059 /* The BillboardUITests */,
 				46FBEE921DEE568800BEB059 /* Products */,
+				E65407B4B3979BAD6B0E1077 /* Pods */,
+				F3FD7CE00F89000A3ED47E3C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,6 +173,23 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		E65407B4B3979BAD6B0E1077 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AB9CBAF9BFF50BD9DEA5DCCD /* Pods-The Billboard.debug.xcconfig */,
+				0EC7C0807E250C0EE959F9C1 /* Pods-The Billboard.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F3FD7CE00F89000A3ED47E3C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7BCD87A95D4A48F253A43A90 /* Pods_The_Billboard.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -173,9 +197,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46FBEEB91DEE568800BEB059 /* Build configuration list for PBXNativeTarget "The Billboard" */;
 			buildPhases = (
+				F901D7665D711E94FFC30F0B /* [CP] Check Pods Manifest.lock */,
 				46FBEE8D1DEE568800BEB059 /* Sources */,
 				46FBEE8E1DEE568800BEB059 /* Frameworks */,
 				46FBEE8F1DEE568800BEB059 /* Resources */,
+				AE009EF9631CBB98A1863C59 /* [CP] Embed Pods Frameworks */,
+				7F1D78CC2A88C7264E925F4A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -297,6 +324,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7F1D78CC2A88C7264E925F4A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-The Billboard/Pods-The Billboard-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE009EF9631CBB98A1863C59 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-The Billboard/Pods-The Billboard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F901D7665D711E94FFC30F0B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		46FBEE8D1DEE568800BEB059 /* Sources */ = {
@@ -462,6 +537,7 @@
 		};
 		46FBEEBA1DEE568800BEB059 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB9CBAF9BFF50BD9DEA5DCCD /* Pods-The Billboard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4AGM7R9538;
@@ -475,6 +551,7 @@
 		};
 		46FBEEBB1DEE568800BEB059 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EC7C0807E250C0EE959F9C1 /* Pods-The Billboard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4AGM7R9538;
