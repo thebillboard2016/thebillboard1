@@ -27,7 +27,15 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
     }
     
     @IBAction func uploadAction(_ sender: UIBarButtonItem) {
-        // This will be the function that uploads the image and caption to the database.
+        let imageData = UIImageJPEGRepresentation(takenImage.image!, 0.6)
+        let compressedImage = UIImage(data: imageData!)
+        //UPLOAD
+    }
+    
+    @IBAction func saveBarButton(_ sender: UIBarButtonItem) {
+        let imageData = UIImageJPEGRepresentation(takenImage.image!, 0.6)
+        let compressedImage = UIImage(data: imageData!)
+        UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
     }
     
 
@@ -56,5 +64,3 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
     }
 }
 
-
-}

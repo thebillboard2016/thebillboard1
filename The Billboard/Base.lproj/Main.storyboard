@@ -179,6 +179,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b3Y-JM-JGX">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Item" systemItem="camera" id="BOM-ym-SJX">
+                                        <connections>
+                                            <action selector="cameraBarButton:" destination="CFT-SV-dIw" id="4Qh-BP-2xz"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Item" systemItem="action" id="Y3U-wL-ybi">
+                                        <connections>
+                                            <action selector="photolibraryBarButton:" destination="CFT-SV-dIw" id="Ysq-tH-GEt"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="save" id="AXB-W2-xDy">
+                                        <connections>
+                                            <action selector="saveBarButton:" destination="CFT-SV-dIw" id="ORY-Ed-7py"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
