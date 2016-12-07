@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScrollViewController: UIViewController {
+class ScrollViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     @IBOutlet weak var scrollview: UIScrollView!
 
@@ -22,16 +22,6 @@ class ScrollViewController: UIViewController {
         Posts?.didMove(toParentViewController: self)
         Posts?.view.frame = scrollview.bounds
         
-        let Camera = self.storyboard?.instantiateViewController(withIdentifier: "Camera") as UIViewController!
-        self.addChildViewController(Camera!)
-        self.scrollview.addSubview((Camera?.view)!)
-        Camera?.didMove(toParentViewController: self)
-        Camera?.view.frame = scrollview.bounds
-        
-        var CameraFrame: CGRect = Camera!.view.frame
-        CameraFrame.origin.x = self.view.frame.width
-        Camera?.view.frame = CameraFrame
-        
         let Map = self.storyboard?.instantiateViewController(withIdentifier: "Map") as UIViewController!
         self.addChildViewController(Map!)
         self.scrollview.addSubview((Map?.view)!)
@@ -39,11 +29,11 @@ class ScrollViewController: UIViewController {
         Map?.view.frame = scrollview.bounds
         
         var MapFrame: CGRect = Map!.view.frame
-        MapFrame.origin.x = 2 * self.view.frame.width
+        MapFrame.origin.x = self.view.frame.width
         Map?.view.frame = MapFrame
         
         // Make the scroll view the ocrrect size.
-        self.scrollview.contentSize = CGSize(width: (self.view.frame.width) * 3,height: (self.view.frame.height))
+        self.scrollview.contentSize = CGSize(width: (self.view.frame.width) * 2,height: (self.view.frame.height))
         self.scrollview.contentOffset = CGPoint(x: (self.view.frame.width) * 1, y: (self.view.frame.height))
         
         
@@ -55,15 +45,32 @@ class ScrollViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func cameraButton(_ sender: UIBarButtonItem) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera){
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
     }
-    */
-
+    @IBAction func uploadBarButton(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary){
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!){
+        //Here is where I want to put the Segue that moves to the imageAndCaption Scene
+        // this code below is what I want to use along with the open tab on Sam's computer. These together should allow me to pass the image to the new view controller before the function actually executes.
+        //override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        //if (segue.identifier == "Load View") {
+            // pass data to next view
+        //}
+    //}
+        self.performSegue(withIdentifier: "PhotoSegue1", sender: self)
+            }
 }
