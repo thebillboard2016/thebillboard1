@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -156,7 +156,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wbp-kQ-51M">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nfd-pt-rdm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <navigationBar opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wbp-kQ-51M">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Take a photo" id="Xko-7T-aDi">
@@ -168,12 +171,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Caption..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="50B-Ey-amP">
-                                <rect key="frame" x="0.0" y="371" width="375" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3Y-JM-JGX">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
@@ -182,7 +179,7 @@
                                             <action selector="cameraBarButton:" destination="CFT-SV-dIw" id="4Qh-BP-2xz"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Item" systemItem="action" id="Y3U-wL-ybi">
+                                    <barButtonItem title="From File" id="Y3U-wL-ybi">
                                         <connections>
                                             <action selector="photolibraryBarButton:" destination="CFT-SV-dIw" id="Ysq-tH-GEt"/>
                                         </connections>
@@ -194,28 +191,30 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nfd-pt-rdm">
-                                <rect key="frame" x="0.0" y="44" width="375" height="363"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="363" id="GU3-0r-G3M"/>
-                                </constraints>
-                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Caption..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="50B-Ey-amP">
+                                <rect key="frame" x="16" y="56" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Nfd-pt-rdm" firstAttribute="centerX" secondItem="yAC-Qd-YHH" secondAttribute="centerX" id="04r-Qu-TaT"/>
-                            <constraint firstItem="R7T-PF-ByA" firstAttribute="top" secondItem="Nfd-pt-rdm" secondAttribute="bottom" constant="260" id="3Mb-eL-Pd9"/>
+                            <constraint firstItem="Wbp-kQ-51M" firstAttribute="bottom" secondItem="Nfd-pt-rdm" secondAttribute="top" constant="44" id="AvU-ia-kNc"/>
+                            <constraint firstItem="50B-Ey-amP" firstAttribute="leading" secondItem="Nfd-pt-rdm" secondAttribute="leading" constant="16" id="Dmo-SB-5NQ"/>
+                            <constraint firstItem="b3Y-JM-JGX" firstAttribute="top" secondItem="Nfd-pt-rdm" secondAttribute="bottom" constant="-44" id="JWJ-4I-yFL"/>
                             <constraint firstItem="b3Y-JM-JGX" firstAttribute="bottom" secondItem="R7T-PF-ByA" secondAttribute="top" id="LOO-c5-KIT"/>
-                            <constraint firstItem="Nfd-pt-rdm" firstAttribute="trailing" secondItem="Wbp-kQ-51M" secondAttribute="trailing" id="MO3-rw-Lxx"/>
-                            <constraint firstItem="Nfd-pt-rdm" firstAttribute="trailing" secondItem="50B-Ey-amP" secondAttribute="trailing" id="MWT-xh-0kP"/>
-                            <constraint firstItem="Nfd-pt-rdm" firstAttribute="leading" secondItem="b3Y-JM-JGX" secondAttribute="leading" id="PgQ-Xa-c4Q"/>
-                            <constraint firstAttribute="bottom" secondItem="50B-Ey-amP" secondAttribute="bottom" constant="266" id="YIn-Bc-K8Q"/>
+                            <constraint firstItem="50B-Ey-amP" firstAttribute="bottom" secondItem="Nfd-pt-rdm" secondAttribute="bottom" constant="-581" id="Ld3-Jr-QFt"/>
+                            <constraint firstItem="b3Y-JM-JGX" firstAttribute="leading" secondItem="Wbp-kQ-51M" secondAttribute="leading" id="PVa-Xe-Kz5"/>
+                            <constraint firstItem="50B-Ey-amP" firstAttribute="trailing" secondItem="Nfd-pt-rdm" secondAttribute="trailing" constant="-16" id="SxR-YL-fDq"/>
+                            <constraint firstItem="b3Y-JM-JGX" firstAttribute="trailing" secondItem="Nfd-pt-rdm" secondAttribute="trailing" id="U8T-am-iKp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Nfd-pt-rdm" secondAttribute="trailing" constant="-16" id="ZQo-nw-cQ6"/>
-                            <constraint firstItem="Nfd-pt-rdm" firstAttribute="leading" secondItem="50B-Ey-amP" secondAttribute="leading" id="djm-o2-jDm"/>
-                            <constraint firstItem="Nfd-pt-rdm" firstAttribute="leading" secondItem="Wbp-kQ-51M" secondAttribute="leading" id="htk-s8-viM"/>
-                            <constraint firstItem="Nfd-pt-rdm" firstAttribute="trailing" secondItem="b3Y-JM-JGX" secondAttribute="trailing" id="jce-9C-9hv"/>
-                            <constraint firstItem="Nfd-pt-rdm" firstAttribute="top" secondItem="Wbp-kQ-51M" secondAttribute="bottom" id="poN-F3-EeX"/>
-                            <constraint firstItem="Nfd-pt-rdm" firstAttribute="leading" secondItem="yAC-Qd-YHH" secondAttribute="leadingMargin" constant="-16" id="xqF-dF-lrO"/>
+                            <constraint firstItem="b3Y-JM-JGX" firstAttribute="leading" secondItem="Nfd-pt-rdm" secondAttribute="leading" id="fqr-Wc-cod"/>
+                            <constraint firstItem="b3Y-JM-JGX" firstAttribute="trailing" secondItem="Wbp-kQ-51M" secondAttribute="trailing" id="kTg-J7-PEd"/>
+                            <constraint firstItem="b3Y-JM-JGX" firstAttribute="top" secondItem="Nfd-pt-rdm" secondAttribute="bottom" constant="-44" id="naf-4c-1Dq"/>
+                            <constraint firstItem="Wbp-kQ-51M" firstAttribute="top" secondItem="yAC-Qd-YHH" secondAttribute="top" id="oa8-M2-ffc"/>
+                            <constraint firstItem="50B-Ey-amP" firstAttribute="top" secondItem="Nfd-pt-rdm" secondAttribute="top" constant="56" id="zwM-8E-xTt"/>
                         </constraints>
                     </view>
                     <connections>
@@ -393,7 +392,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yay-8D-HCM" id="CR0-8m-3CX">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9VL-YV-Gki">
