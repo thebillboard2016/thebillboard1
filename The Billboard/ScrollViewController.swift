@@ -55,32 +55,4 @@ class ScrollViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func cameraButton(_ sender: UIBarButtonItem) {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera){
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
-            imagePicker.allowsEditing = false
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-    }
-    @IBAction func uploadBarButton(_ sender: Any) {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary){
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
-            imagePicker.allowsEditing = true
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-    }
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!){
-        //Here is where I want to put the Segue that moves to the imageAndCaption Scene
-        // this code below is what I want to use along with the open tab on Sam's computer. These together should allow me to pass the image to the new view controller before the function actually executes.
-        //override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        //if (segue.identifier == "Load View") {
-            // pass data to next view
-        //}
-    //}
-        self.performSegue(withIdentifier: "PhotoSegue1", sender: self)
-            }
 }
