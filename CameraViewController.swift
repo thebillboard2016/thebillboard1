@@ -60,9 +60,10 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.dismiss(animated: true, completion: nil);
     }
     
-    func savedImage(){
-        let alertController = UIAlertController(title: "Image Saved", Bundle: "Image Saved", preferredStyle: .alert)
-        let
-    }
+    //func savedImage(){
+        //let alertController = UIAlertController(title: "Image saved", Bundle: "Image Saved", preferredStyle: .alert)
+        //let
+    //}
+    
 
 }
