@@ -7,24 +7,22 @@
 //
 
 import Foundation
+import UIKit
 
 // Define a class to store the image and the associated caption. 
 
-class imageAndCaption
+class post
 {
     // Properties
-    var image: Data
-    var caption: String?
+    var image: UIImage
+    var caption: String
+    var location: (Double, Double)?
     
     // Initialisation
-    init?(image: Data, caption: String)
+    init(image: UIImage, caption: String, location: (Double, Double)?)
     {
-        // Error checking
-        if image.isEmpty
-        {
-            return nil
-        }
-        
         self.image = image
+        self.caption = caption
+        self.location = location
     }
 }
