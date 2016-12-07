@@ -85,7 +85,7 @@ class RegisterViewController: UIViewController {
         confirmPasswordField.text?.removeAll()
         
         // Log user out
-        // Buddy.logoutUser(nil)
+        // Buddy.logoutUser(<#T##callback: BuddyCompletionCallback!##BuddyCompletionCallback!##(Error?) -> Void#>)
 
     }
     

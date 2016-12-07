@@ -34,12 +34,33 @@ class ViewController: UIViewController {
     @IBAction func loginButton(_ sender: UIButton) {
         
         // Log user in
-        
-        
-        Buddy.loginUser(usernameLoginField.text!, password: passwordLoginField.text!, callback: {BuddyObjectCallback in })
-        
-        //Buddy.loginUser(usernameLoginField.text!, password: passwordLoginField.text!, callback: {(id: Any?, error: NSError?) -> Void in })
-
+        Buddy.loginUser(usernameLoginField.text!, password: passwordLoginField.text!, callback: {
+            (id: Any?, error: Error?) -> Void in
+            
+            if error == nil
+            {
+                // Output
+                print("Login successful")
+                
+                // Segue to Map
+                self.performSegue(withIdentifier: "loginSegue", sender: self)
+                
+                
+            }
+            else
+            {
+                // Output
+                print("Login failed")
+                
+                // Empty fields
+                self.passwordLoginField.text?.removeAll()
+                
+                // Display error message
+                // TODO
+                
+                
+            }
+        })
         
     }
     
