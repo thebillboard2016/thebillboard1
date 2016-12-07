@@ -58,12 +58,25 @@ class RegisterViewController: UIViewController {
 
         }
         
+        // Check if password is at least of length 6
+        if passwordField.text!.characters.count < 6
+        {
+            // Display Error Message
+            // TODO
+            
+            passwordField.text?.removeAll()
+            confirmPasswordField.text?.removeAll()
+            
+            return
+        }
         // Check if username/emailaddress doesn't exist yet
         // TODO
         
         
         // Register User
+        
         Buddy.createUser(usernameField.text!, password: passwordField.text!, firstName: nil, lastName: nil, email: emailAddressField.text!, dateOfBirth: nil, gender: nil, tag: nil, callback: nil)
+        
         
         // Empty fields
         usernameField.text?.removeAll()
@@ -71,6 +84,9 @@ class RegisterViewController: UIViewController {
         passwordField.text?.removeAll()
         confirmPasswordField.text?.removeAll()
         
+        // Log user out
+        // Buddy.logoutUser(nil)
+
     }
     
     
