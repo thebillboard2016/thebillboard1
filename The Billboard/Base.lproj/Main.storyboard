@@ -381,6 +381,7 @@
                         <outlet property="emailAddressField" destination="1qu-OK-Ms2" id="jTA-Ln-Kmm"/>
                         <outlet property="passwordField" destination="UfX-hg-SQL" id="dTG-za-i8W"/>
                         <outlet property="usernameField" destination="UP7-7r-qM3" id="kR4-2K-rDE"/>
+                        <segue destination="EAU-cy-SBE" kind="presentation" identifier="registerSegue" id="IbH-Sw-Ln9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vrI-39-0Yp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -441,6 +442,6 @@
         <image name="Posts tab bar icon" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4Sg-ZB-3A7"/>
+        <segue reference="IbH-Sw-Ln9"/>
     </inferredMetricsTieBreakers>
 </document>
