@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -93,6 +93,10 @@
                             <constraint firstAttribute="leadingMargin" secondItem="oV0-97-cdf" secondAttribute="leading" id="t7b-0T-9Eg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordField" destination="hc7-76-Lsn" id="HUh-UD-pec"/>
+                        <outlet property="usernameField" destination="XDP-Vd-pbi" id="86E-Fj-pk2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -405,6 +409,6 @@
         <image name="Posts tab bar icon" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1dU-eC-TkL"/>
+        <segue reference="5jp-lO-wXt"/>
     </inferredMetricsTieBreakers>
 </document>
