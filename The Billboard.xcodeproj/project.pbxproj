@@ -23,7 +23,6 @@
 		46FBEEAA1DEE568800BEB059 /* The_BillboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FBEEA91DEE568800BEB059 /* The_BillboardTests.swift */; };
 		46FBEEB51DEE568800BEB059 /* The_BillboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FBEEB41DEE568800BEB059 /* The_BillboardUITests.swift */; };
 		46FBEECA1DEE624000BEB059 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FBEEC91DEE624000BEB059 /* RegisterViewController.swift */; };
-		46FBEECC1DEFC10B00BEB059 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FBEECB1DEFC10B00BEB059 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +65,6 @@
 		46FBEEB41DEE568800BEB059 /* The_BillboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_BillboardUITests.swift; sourceTree = "<group>"; };
 		46FBEEB61DEE568800BEB059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46FBEEC91DEE624000BEB059 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		46FBEECB1DEFC10B00BEB059 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7BCD87A95D4A48F253A43A90 /* Pods_The_Billboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_The_Billboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB9CBAF9BFF50BD9DEA5DCCD /* Pods-The Billboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Billboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-The Billboard/Pods-The Billboard.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				22B29D8F1DF7E7120047CF52 /* Image_and_caption.swift */,
-				46FBEECB1DEFC10B00BEB059 /* User.swift */,
 			);
 			name = "Storage classes";
 			sourceTree = "<group>";
@@ -399,7 +396,6 @@
 			files = (
 				2253932C1DF08004002F69F6 /* postsTableViewController.swift in Sources */,
 				46FBEE971DEE568800BEB059 /* ViewController.swift in Sources */,
-				46FBEECC1DEFC10B00BEB059 /* User.swift in Sources */,
 				228B3E6E1DEE6F35002D8F66 /* PostTableViewCell.swift in Sources */,
 				222D92A81DF655A80008C94D /* ScrollViewController.swift in Sources */,
 				2253932E1DF088CE002F69F6 /* mapViewController.swift in Sources */,

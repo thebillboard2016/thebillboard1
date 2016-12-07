@@ -10,7 +10,7 @@ import Foundation
 
 // Define a class to store the image and the associated caption. 
 
-struct imageAndCaption
+class imageAndCaption
 {
     // Properties
     var image: Data
