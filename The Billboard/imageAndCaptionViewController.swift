@@ -16,6 +16,7 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }
@@ -24,12 +25,6 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    // Hopefully display the image!
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!){
-        takenImage.image = image
-        self.dismiss(animated: true, completion: nil);
-        }
     
     @IBAction func uploadAction(_ sender: UIBarButtonItem) {
         // This will be the function that uploads the image and caption to the database.

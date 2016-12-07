@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -142,12 +142,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ACw-9P-rdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1812" y="36"/>
+            <point key="canvasLocation" x="3319" y="36"/>
         </scene>
         <!--Image And Caption View Controller-->
         <scene sceneID="PwI-nq-p6W">
             <objects>
-                <viewController id="CFT-SV-dIw" customClass="imageAndCaptionViewController" customModule="The_Billboard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Camera" id="CFT-SV-dIw" customClass="imageAndCaptionViewController" customModule="The_Billboard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nr8-8a-Ix4"/>
                         <viewControllerLayoutGuide type="bottom" id="R7T-PF-ByA"/>
@@ -161,25 +161,19 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Title" id="Xko-7T-aDi">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Vzj-NZ-6JM">
-                                            <connections>
-                                                <segue destination="EAU-cy-SBE" kind="showDetail" id="wey-5F-NYP"/>
-                                            </connections>
-                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Upload" id="gV7-VT-2KO">
                                             <connections>
                                                 <action selector="uploadAction:" destination="CFT-SV-dIw" id="BSX-we-YN6"/>
-                                                <segue destination="EAU-cy-SBE" kind="showDetail" id="qKf-kI-f0f"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nfd-pt-rdm">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="363"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="50B-Ey-amP">
-                                <rect key="frame" x="0.0" y="637" width="375" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Caption..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="50B-Ey-amP">
+                                <rect key="frame" x="0.0" y="371" width="375" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -188,10 +182,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Nfd-pt-rdm" firstAttribute="centerX" secondItem="yAC-Qd-YHH" secondAttribute="centerX" id="IEP-rA-9Rx"/>
-                            <constraint firstItem="Nfd-pt-rdm" firstAttribute="height" secondItem="yAC-Qd-YHH" secondAttribute="height" id="KQK-hW-6xH"/>
-                            <constraint firstItem="Nfd-pt-rdm" firstAttribute="width" secondItem="yAC-Qd-YHH" secondAttribute="width" id="Xg7-cW-Bt0"/>
-                            <constraint firstItem="Nfd-pt-rdm" firstAttribute="centerY" secondItem="yAC-Qd-YHH" secondAttribute="centerY" id="uq3-BB-RMC"/>
+                            <constraint firstItem="Nfd-pt-rdm" firstAttribute="centerX" secondItem="yAC-Qd-YHH" secondAttribute="centerX" id="04r-Qu-TaT"/>
+                            <constraint firstItem="Nfd-pt-rdm" firstAttribute="top" secondItem="nr8-8a-Ix4" secondAttribute="bottom" constant="-20" id="1pW-RQ-v8T"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nfd-pt-rdm" secondAttribute="trailing" constant="-16" id="ZQo-nw-cQ6"/>
+                            <constraint firstItem="R7T-PF-ByA" firstAttribute="top" secondItem="Nfd-pt-rdm" secondAttribute="bottom" constant="304" id="xEY-Fl-j7a"/>
+                            <constraint firstItem="Nfd-pt-rdm" firstAttribute="leading" secondItem="yAC-Qd-YHH" secondAttribute="leadingMargin" constant="-16" id="xqF-dF-lrO"/>
                         </constraints>
                     </view>
                     <connections>
@@ -201,7 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBF-aN-MNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1812" y="-793"/>
+            <point key="canvasLocation" x="2476" y="35.532233883058474"/>
         </scene>
         <!--Scroll View Controller-->
         <scene sceneID="tiD-B8-yxu">
@@ -218,22 +213,6 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5P-4B-axs">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </scrollView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EHU-vd-BZ8">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="Item" style="plain" systemItem="camera" id="6MG-J0-eQy">
-                                        <connections>
-                                            <action selector="cameraButton:" destination="EAU-cy-SBE" id="flL-t5-9os"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem systemItem="action" id="Ymp-Lh-66h">
-                                        <connections>
-                                            <action selector="uploadBarButton:" destination="EAU-cy-SBE" id="ERm-J0-hX2"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -245,7 +224,6 @@
                     </view>
                     <connections>
                         <outlet property="scrollview" destination="Y5P-4B-axs" id="XRH-ij-ooz"/>
-                        <segue destination="CFT-SV-dIw" kind="showDetail" identifier="PhotoSegue1" id="jd6-CU-a06"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7OV-0W-cF8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -417,7 +395,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DT2-Gm-4Em" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2999" y="61"/>
+            <point key="canvasLocation" x="1772" y="36"/>
         </scene>
     </scenes>
     <resources>
@@ -427,6 +405,6 @@
         <image name="Posts tab bar icon" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4Sg-ZB-3A7"/>
+        <segue reference="1dU-eC-TkL"/>
     </inferredMetricsTieBreakers>
 </document>
