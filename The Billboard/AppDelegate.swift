@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import BuddySDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // Initialize Buddy
+        Buddy.init("bbbbbc.ptGkcNMlskHsc", appKey: "6fac5046-4e74-a047-0542-c22701ef5ed2");
+        
+        
         return true
     }
 
