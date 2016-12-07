@@ -59,8 +59,8 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
         }
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!){
- 
-        self.performSegue(withIdentifier: "PhotoSegue1", sender: self)
+        takenImage.image = image
+        self.dismiss(animated: true, completion: nil);
     }
 }
 
