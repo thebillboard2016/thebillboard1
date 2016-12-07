@@ -63,4 +63,14 @@ class ScrollViewController: UIViewController, UIImagePickerControllerDelegate, U
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!){
+        //Here is where I want to put the Segue that moves to the imageAndCaption Scene
+        // this code below is what I want to use along with the open tab on Sam's computer. These together should allow me to pass the image to the new view controller before the function actually executes.
+        //override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        //if (segue.identifier == "Load View") {
+            // pass data to next view
+        //}
+    //}
+        self.performSegue(withIdentifier: "PhotoSegue1", sender: self)
+            }
 }
