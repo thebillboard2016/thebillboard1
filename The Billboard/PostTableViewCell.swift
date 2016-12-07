@@ -2,17 +2,13 @@
 //  PostTableViewCell.swift
 //  The Billboard
 //
-//  Created by Samuel Meijer on 29/11/2016.
+//  Created by Lars Lorch on 12/7/16.
 //  Copyright © 2016 The Billboard. All rights reserved.
 //
 
 import UIKit
 
 class PostTableViewCell: UITableViewCell {
-    
-    // MARK: Properties
-    @IBOutlet weak var postcontentLabel: UILabel!
-    @IBOutlet weak var postimageImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,8 +21,4 @@ class PostTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    
-    // Functions that display the image in 'postimageImageView' and the content
-    // in 'postcontentLabel' go here. These look like they should be pretty simple
-    // in reality.
 }
