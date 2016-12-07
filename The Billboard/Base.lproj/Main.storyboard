@@ -184,22 +184,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y2i-eP-y6o">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QLm-9p-GT7">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYZ-qW-p7Z">
+                                <rect key="frame" x="171" y="571" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Take"/>
+                                <connections>
+                                    <action selector="takebuttonaction:" destination="m0V-Te-GF6" eventType="touchUpInside" id="cDe-aU-8qw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IM8-lv-YpO">
+                                <rect key="frame" x="163" y="609" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Library"/>
+                                <connections>
+                                    <action selector="photolibraryaction:" destination="m0V-Te-GF6" eventType="touchUpInside" id="PAD-4p-t6O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6Z-Rq-kZX">
+                                <rect key="frame" x="319" y="20" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveaction:" destination="m0V-Te-GF6" eventType="touchUpInside" id="V5c-Gb-day"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Y2i-eP-y6o" firstAttribute="centerX" secondItem="KxZ-BZ-RHE" secondAttribute="centerX" id="DD4-qE-MuW"/>
-                            <constraint firstItem="Y2i-eP-y6o" firstAttribute="height" secondItem="KxZ-BZ-RHE" secondAttribute="height" id="F6O-BP-t5Q"/>
-                            <constraint firstItem="Y2i-eP-y6o" firstAttribute="width" secondItem="KxZ-BZ-RHE" secondAttribute="width" id="dVg-vY-O82"/>
-                            <constraint firstItem="Y2i-eP-y6o" firstAttribute="centerY" secondItem="KxZ-BZ-RHE" secondAttribute="centerY" id="sD1-1i-eyT"/>
+                            <constraint firstItem="QLm-9p-GT7" firstAttribute="height" secondItem="KxZ-BZ-RHE" secondAttribute="height" id="0iJ-1e-pTf"/>
+                            <constraint firstItem="QLm-9p-GT7" firstAttribute="width" secondItem="KxZ-BZ-RHE" secondAttribute="width" id="AlE-pN-i50"/>
+                            <constraint firstItem="QLm-9p-GT7" firstAttribute="centerX" secondItem="KxZ-BZ-RHE" secondAttribute="centerX" id="Vkd-vS-9Xf"/>
+                            <constraint firstItem="QLm-9p-GT7" firstAttribute="centerY" secondItem="KxZ-BZ-RHE" secondAttribute="centerY" id="msK-Nv-BU1"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Camera" image="Camera tab bar icon" id="v0c-J5-0s3"/>
                     <connections>
-                        <outlet property="camreaView" destination="Y2i-eP-y6o" id="Kxt-Oj-2Mh"/>
+                        <outlet property="cameraView" destination="QLm-9p-GT7" id="CQ6-W0-qfs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i1t-am-ouh" userLabel="First Responder" sceneMemberID="firstResponder"/>
