@@ -37,14 +37,6 @@ class RegisterViewController: UIViewController {
     @IBAction func registerButton(_ sender: UIButton) {
         
         
-        
-        
-        
-        
-        
-        
-        //-------------------------------------------
-        
         // Check if form is filled out correctly 
         
         if usernameField.text!.isEmpty || emailAddressField.text!.isEmpty ||
@@ -73,7 +65,11 @@ class RegisterViewController: UIViewController {
         // Register User
         Buddy.createUser(usernameField.text!, password: passwordField.text!, firstName: nil, lastName: nil, email: emailAddressField.text!, dateOfBirth: nil, gender: nil, tag: nil, callback: nil)
         
-        
+        // Empty fields
+        usernameField.text?.removeAll()
+        emailAddressField.text?.removeAll()
+        passwordField.text?.removeAll()
+        confirmPasswordField.text?.removeAll()
         
     }
     

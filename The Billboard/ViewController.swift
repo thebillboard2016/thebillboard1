@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import BuddySDK
 
 class ViewController: UIViewController {
     
- 
+    // Properties
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,15 +28,22 @@ class ViewController: UIViewController {
 
     // Actions
     
+    // Login (Button)
     @IBAction func loginButton(_ sender: UIButton) {
+        
+        Buddy.loginUser(usernameField.text!, password: passwordField.text!, callback: nil)
+        
+        
+        
+   
     }
     
+    // Segue to Register View Controller
     @IBAction func registerButton(_ sender: UIButton) {
     }
     
     
     // Segues
-    
     @IBAction func unwindToThisViewController(segue: UIStoryboardSegue) {
     }
     

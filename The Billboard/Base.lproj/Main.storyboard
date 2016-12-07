@@ -93,6 +93,10 @@
                             <constraint firstAttribute="leadingMargin" secondItem="oV0-97-cdf" secondAttribute="leading" id="t7b-0T-9Eg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordField" destination="hc7-76-Lsn" id="HUh-UD-pec"/>
+                        <outlet property="usernameField" destination="XDP-Vd-pbi" id="86E-Fj-pk2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
