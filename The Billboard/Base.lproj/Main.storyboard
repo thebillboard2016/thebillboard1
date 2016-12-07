@@ -156,8 +156,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload a photo to The Billboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsW-VF-zTk">
+                                <rect key="frame" x="16" y="301" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.53645158678756477" green="0.53645158678756477" blue="0.53645158678756477" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nfd-pt-rdm">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="573"/>
                             </imageView>
                             <navigationBar opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wbp-kQ-51M">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -201,20 +207,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Nfd-pt-rdm" firstAttribute="centerX" secondItem="yAC-Qd-YHH" secondAttribute="centerX" id="04r-Qu-TaT"/>
-                            <constraint firstItem="Wbp-kQ-51M" firstAttribute="bottom" secondItem="Nfd-pt-rdm" secondAttribute="top" constant="44" id="AvU-ia-kNc"/>
+                            <constraint firstItem="Wbp-kQ-51M" firstAttribute="bottom" secondItem="Nfd-pt-rdm" secondAttribute="top" constant="-50" id="AvU-ia-kNc"/>
                             <constraint firstItem="50B-Ey-amP" firstAttribute="leading" secondItem="Nfd-pt-rdm" secondAttribute="leading" constant="16" id="Dmo-SB-5NQ"/>
                             <constraint firstItem="b3Y-JM-JGX" firstAttribute="top" secondItem="Nfd-pt-rdm" secondAttribute="bottom" constant="-44" id="JWJ-4I-yFL"/>
                             <constraint firstItem="b3Y-JM-JGX" firstAttribute="bottom" secondItem="R7T-PF-ByA" secondAttribute="top" id="LOO-c5-KIT"/>
                             <constraint firstItem="50B-Ey-amP" firstAttribute="bottom" secondItem="Nfd-pt-rdm" secondAttribute="bottom" constant="-581" id="Ld3-Jr-QFt"/>
                             <constraint firstItem="b3Y-JM-JGX" firstAttribute="leading" secondItem="Wbp-kQ-51M" secondAttribute="leading" id="PVa-Xe-Kz5"/>
+                            <constraint firstItem="CsW-VF-zTk" firstAttribute="centerY" secondItem="Nfd-pt-rdm" secondAttribute="centerY" constant="-69" id="SRq-Tq-nwu"/>
                             <constraint firstItem="50B-Ey-amP" firstAttribute="trailing" secondItem="Nfd-pt-rdm" secondAttribute="trailing" constant="-16" id="SxR-YL-fDq"/>
+                            <constraint firstItem="CsW-VF-zTk" firstAttribute="trailing" secondItem="50B-Ey-amP" secondAttribute="trailing" id="T9K-If-GaU"/>
                             <constraint firstItem="b3Y-JM-JGX" firstAttribute="trailing" secondItem="Nfd-pt-rdm" secondAttribute="trailing" id="U8T-am-iKp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Nfd-pt-rdm" secondAttribute="trailing" constant="-16" id="ZQo-nw-cQ6"/>
                             <constraint firstItem="b3Y-JM-JGX" firstAttribute="leading" secondItem="Nfd-pt-rdm" secondAttribute="leading" id="fqr-Wc-cod"/>
                             <constraint firstItem="b3Y-JM-JGX" firstAttribute="trailing" secondItem="Wbp-kQ-51M" secondAttribute="trailing" id="kTg-J7-PEd"/>
                             <constraint firstItem="b3Y-JM-JGX" firstAttribute="top" secondItem="Nfd-pt-rdm" secondAttribute="bottom" constant="-44" id="naf-4c-1Dq"/>
                             <constraint firstItem="Wbp-kQ-51M" firstAttribute="top" secondItem="yAC-Qd-YHH" secondAttribute="top" id="oa8-M2-ffc"/>
-                            <constraint firstItem="50B-Ey-amP" firstAttribute="top" secondItem="Nfd-pt-rdm" secondAttribute="top" constant="56" id="zwM-8E-xTt"/>
+                            <constraint firstItem="CsW-VF-zTk" firstAttribute="leading" secondItem="50B-Ey-amP" secondAttribute="leading" id="q5I-9G-zPx"/>
+                            <constraint firstItem="50B-Ey-amP" firstAttribute="top" secondItem="Nfd-pt-rdm" secondAttribute="top" constant="-38" id="zwM-8E-xTt"/>
                         </constraints>
                     </view>
                     <connections>
@@ -224,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBF-aN-MNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2476" y="35.532233883058474"/>
+            <point key="canvasLocation" x="2475.5" y="35.5"/>
         </scene>
         <!--Scroll View Controller-->
         <scene sceneID="tiD-B8-yxu">
@@ -392,7 +401,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yay-8D-HCM" id="CR0-8m-3CX">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9VL-YV-Gki">
@@ -432,6 +441,6 @@
         <image name="Posts tab bar icon" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1dU-eC-TkL"/>
+        <segue reference="4Sg-ZB-3A7"/>
     </inferredMetricsTieBreakers>
 </document>
