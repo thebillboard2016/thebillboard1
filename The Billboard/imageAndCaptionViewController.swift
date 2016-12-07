@@ -14,13 +14,21 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
     @IBOutlet var takenImage: UIImageView!
     @IBOutlet weak var captionTextField: UITextField!
     
+    
+    // dismiss status bar for easy viewing
+    override var prefersStatusBarHidden : Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Allow the keyboard to be removed by a tap
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageAndCaptionViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         }
     
+    // Allow the keyboard to be removed by a tap
     func dismissKeyboard() {
         view.endEditing(true)
     }
