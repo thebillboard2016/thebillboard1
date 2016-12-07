@@ -8,6 +8,7 @@
 
 import UIKit
 import BuddySDK
+import QuartzCore
 
 class RegisterViewController: UIViewController {
     
@@ -61,9 +62,15 @@ class RegisterViewController: UIViewController {
         // Check if password is at least of length 6
         if passwordField.text!.characters.count < 6
         {
-            // Display Error Message
-            // TODO
-            
+            passwordField.layer.cornerRadius = 6.0
+            passwordField.layer.masksToBounds = true
+            passwordField.layer.borderWidth = 1
+            passwordField.layer.borderColor = UIColor.red.cgColor
+            confirmPasswordField.layer.cornerRadius = 6.0
+            confirmPasswordField.layer.masksToBounds = true
+            confirmPasswordField.layer.borderWidth = 1
+            confirmPasswordField.layer.borderColor = UIColor.red.cgColor
+            passwordLengthNotice()
             passwordField.text?.removeAll()
             confirmPasswordField.text?.removeAll()
             
@@ -90,7 +97,12 @@ class RegisterViewController: UIViewController {
     }
     
     
-    
+    func passwordLengthNotice(){
+        let alertController = UIAlertController(title: "Password", message: "Password must be 6 or more characters.", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        present (alertController, animated: true, completion: nil)
+        }
 
     /*
     // MARK: - Navigation
