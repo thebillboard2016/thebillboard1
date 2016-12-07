@@ -156,11 +156,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wbp-kQ-51M">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wbp-kQ-51M">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="Xko-7T-aDi">
+                                    <navigationItem title="Take a photo" id="Xko-7T-aDi">
                                         <barButtonItem key="rightBarButtonItem" title="Upload" id="gV7-VT-2KO">
                                             <connections>
                                                 <action selector="uploadAction:" destination="CFT-SV-dIw" id="BSX-we-YN6"/>
@@ -169,19 +168,14 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nfd-pt-rdm">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="363"/>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Caption..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="50B-Ey-amP">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Caption..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="50B-Ey-amP">
                                 <rect key="frame" x="0.0" y="371" width="375" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b3Y-JM-JGX">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3Y-JM-JGX">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Item" systemItem="camera" id="BOM-ym-SJX">
                                         <connections>
@@ -200,13 +194,27 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nfd-pt-rdm">
+                                <rect key="frame" x="0.0" y="44" width="375" height="363"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="363" id="GU3-0r-G3M"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Nfd-pt-rdm" firstAttribute="centerX" secondItem="yAC-Qd-YHH" secondAttribute="centerX" id="04r-Qu-TaT"/>
-                            <constraint firstItem="Nfd-pt-rdm" firstAttribute="top" secondItem="nr8-8a-Ix4" secondAttribute="bottom" constant="-20" id="1pW-RQ-v8T"/>
+                            <constraint firstItem="R7T-PF-ByA" firstAttribute="top" secondItem="Nfd-pt-rdm" secondAttribute="bottom" constant="260" id="3Mb-eL-Pd9"/>
+                            <constraint firstItem="b3Y-JM-JGX" firstAttribute="bottom" secondItem="R7T-PF-ByA" secondAttribute="top" id="LOO-c5-KIT"/>
+                            <constraint firstItem="Nfd-pt-rdm" firstAttribute="trailing" secondItem="Wbp-kQ-51M" secondAttribute="trailing" id="MO3-rw-Lxx"/>
+                            <constraint firstItem="Nfd-pt-rdm" firstAttribute="trailing" secondItem="50B-Ey-amP" secondAttribute="trailing" id="MWT-xh-0kP"/>
+                            <constraint firstItem="Nfd-pt-rdm" firstAttribute="leading" secondItem="b3Y-JM-JGX" secondAttribute="leading" id="PgQ-Xa-c4Q"/>
+                            <constraint firstAttribute="bottom" secondItem="50B-Ey-amP" secondAttribute="bottom" constant="266" id="YIn-Bc-K8Q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Nfd-pt-rdm" secondAttribute="trailing" constant="-16" id="ZQo-nw-cQ6"/>
-                            <constraint firstItem="R7T-PF-ByA" firstAttribute="top" secondItem="Nfd-pt-rdm" secondAttribute="bottom" constant="304" id="xEY-Fl-j7a"/>
+                            <constraint firstItem="Nfd-pt-rdm" firstAttribute="leading" secondItem="50B-Ey-amP" secondAttribute="leading" id="djm-o2-jDm"/>
+                            <constraint firstItem="Nfd-pt-rdm" firstAttribute="leading" secondItem="Wbp-kQ-51M" secondAttribute="leading" id="htk-s8-viM"/>
+                            <constraint firstItem="Nfd-pt-rdm" firstAttribute="trailing" secondItem="b3Y-JM-JGX" secondAttribute="trailing" id="jce-9C-9hv"/>
+                            <constraint firstItem="Nfd-pt-rdm" firstAttribute="top" secondItem="Wbp-kQ-51M" secondAttribute="bottom" id="poN-F3-EeX"/>
                             <constraint firstItem="Nfd-pt-rdm" firstAttribute="leading" secondItem="yAC-Qd-YHH" secondAttribute="leadingMargin" constant="-16" id="xqF-dF-lrO"/>
                         </constraints>
                     </view>

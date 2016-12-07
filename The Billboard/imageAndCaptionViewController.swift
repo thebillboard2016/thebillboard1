@@ -17,8 +17,14 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        // Do any additional setup after loading the view.
+        // Allow the keyboard to be removed by a tap
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageAndCaptionViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        }
+    
+    // Allow the keyboard to be removed by a tap
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {

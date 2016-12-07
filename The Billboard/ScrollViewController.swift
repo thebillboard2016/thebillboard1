@@ -12,6 +12,11 @@ class ScrollViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBOutlet weak var scrollview: UIScrollView!
 
+    // dismiss status bar for easy viewing
+    override var prefersStatusBarHidden : Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
