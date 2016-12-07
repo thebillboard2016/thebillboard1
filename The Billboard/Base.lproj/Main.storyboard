@@ -168,6 +168,11 @@
                                             <action selector="cameraButton:" destination="EAU-cy-SBE" id="flL-t5-9os"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem systemItem="action" id="Ymp-Lh-66h">
+                                        <connections>
+                                            <action selector="uploadBarButton:" destination="EAU-cy-SBE" id="ERm-J0-hX2"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
