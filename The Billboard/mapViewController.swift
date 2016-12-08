@@ -22,8 +22,24 @@ class mapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // annotations
+        let annotations
+        Buddy.get("/pictures/\(self.ids[0])/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
+            if error == nil
+            {
+                // Read file
+                let file: BPFile = obj as! BPFile
+                self.post1.image = UIImage.init(data: file.fileData)!
+                print("The download was successful")
+            }
+            else
+            {
+                // Error downloading
+                print(error.debugDescription)
+                print("The download failed")
+            }
+        })
         
-        let params: [String: Any?] = [
+        /*let params: [String: Any?] = [
             "contentType" : BPCoordinateRangeMake(41, -72, 20000),
         ]
         Buddy.get("/pictures", parameters: params, class: BPPageResults.self) { (obj: Any, error: Error?) in
@@ -45,7 +61,7 @@ class mapViewController: UIViewController {
                 print(error.debugDescription)
             }
 
-        }
+        }*/
 
     }
 
