@@ -15,13 +15,19 @@ class ImageTableViewController: UITableViewController {
     // Properties
     
     var posts = [post]()
+    let picture_id = "bvc.BscgHMjbFGJsc"
+
+    
+    let queue = DispatchQueue.init(label: "queue")
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Load sample posts
         loadSamplePost()
+        
     }
     
     
@@ -29,34 +35,49 @@ class ImageTableViewController: UITableViewController {
     
     func loadSamplePost()
     {
+        
         // Static default for testing
         let photo1 = UIImage(named: "default Image")!
-        let post1 = post(image: photo1, caption: "This is a post", location: nil)
+        let post2 = post(image: photo1, caption: "This is a post", location: nil)
+        self.posts += [post2]
+        print(" Before Buddy \(self.posts)")
         
-        /*
-        let picture_id = "bvc.HmwDGPzwpCJsc"
+        queue.async {
+            
         
-        Buddy.get("/pictures/\(picture_id)/file", parameters: nil, class: BPFile.self) { (obj: Any?, error: Error?) in
+        // Dynamic photo
+        Buddy.get("/pictures/\(self.picture_id)/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
+            
             
             if error == nil
             {
+                
                 let file: BPFile = obj as! BPFile
                 let image: UIImage = UIImage.init(data: file.fileData)!
+                
+                let post1 = post(image: image, caption: "This should be downloaded", location: (0,0))
+                self.posts += [post1]
+                
+                print(" In Buddy \(self.posts)")
+                print("The download was successful")
+                
+                
             }
             else
             {
                 print(error.debugDescription)
+                print("The download failed")
             }
+        })
+
+        
+        print(" After Buddy \(self.posts)")
+
+        
+        
         }
-
-
-        
-        let post1 =
-        */
-        posts += [post1]
-        
-    }
     
+    }
 
     
 
