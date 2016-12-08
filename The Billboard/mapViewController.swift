@@ -80,7 +80,7 @@ class mapViewController: UIViewController, MKMapViewDelegate {
         Map.addAnnotation(annotation2)
         
         let annotation3 = MKPointAnnotation.init()
-        annotation3.coordinate = CLLocationCoordinate2D(latitude: 42.373115,longitude: -71.117021)
+        annotation3.coordinate = CLLocationCoordinate2D(latitude: 42.373155,longitude: -71.117051)
         annotation3.title = "Where'd all the leavez go?!"
         annotation3.subtitle = "Harvard Yard"
         //annotation.
@@ -94,7 +94,7 @@ class mapViewController: UIViewController, MKMapViewDelegate {
         Map.addAnnotation(annotation4)
         
         let annotation5 = MKPointAnnotation.init()
-        annotation5.coordinate = CLLocationCoordinate2D(latitude: 42.372663,longitude: -71.116417)
+        annotation5.coordinate = CLLocationCoordinate2D(latitude: 42.372863,longitude: -71.116617)
         annotation5.title = "Enter to grow in wisdom."
         annotation5.subtitle = "Massachussetts Ave."
         //annotation.

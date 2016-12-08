@@ -14,7 +14,6 @@
 		22B29D931DF7F21C0047CF52 /* imageAndCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B29D921DF7F21C0047CF52 /* imageAndCaptionViewController.swift */; };
 		22B29D951DF7FBAC0047CF52 /* photoSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B29D941DF7FBAC0047CF52 /* photoSegue.swift */; };
 		46D2496A1DF8A72500C0E36F /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D249691DF8A72500C0E36F /* PostTableViewCell.swift */; };
-		46D2496C1DF8AB5F00C0E36F /* ImageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D2496B1DF8AB5F00C0E36F /* ImageTableViewController.swift */; };
 		46D249701DF92F6C00C0E36F /* postsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D2496F1DF92F6C00C0E36F /* postsViewController.swift */; };
 		46FBEE951DEE568800BEB059 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FBEE941DEE568800BEB059 /* AppDelegate.swift */; };
 		46FBEE971DEE568800BEB059 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FBEE961DEE568800BEB059 /* ViewController.swift */; };
@@ -51,7 +50,6 @@
 		22B29D921DF7F21C0047CF52 /* imageAndCaptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageAndCaptionViewController.swift; sourceTree = "<group>"; };
 		22B29D941DF7FBAC0047CF52 /* photoSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = photoSegue.swift; sourceTree = "<group>"; };
 		46D249691DF8A72500C0E36F /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostTableViewCell.swift; path = "The Billboard/PostTableViewCell.swift"; sourceTree = "<group>"; };
-		46D2496B1DF8AB5F00C0E36F /* ImageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewController.swift; sourceTree = "<group>"; };
 		46D2496F1DF92F6C00C0E36F /* postsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = postsViewController.swift; sourceTree = "<group>"; };
 		46FBEE911DEE568800BEB059 /* The Billboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Billboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46FBEE941DEE568800BEB059 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 		46FBEEC21DEE5B7900BEB059 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				46D2496B1DF8AB5F00C0E36F /* ImageTableViewController.swift */,
 				2253932D1DF088CE002F69F6 /* mapViewController.swift */,
 				46FBEEC91DEE624000BEB059 /* RegisterViewController.swift */,
 				46FBEE961DEE568800BEB059 /* ViewController.swift */,
@@ -407,7 +404,6 @@
 				46D249701DF92F6C00C0E36F /* postsViewController.swift in Sources */,
 				22B29D901DF7E7120047CF52 /* post.swift in Sources */,
 				46FBEECA1DEE624000BEB059 /* RegisterViewController.swift in Sources */,
-				46D2496C1DF8AB5F00C0E36F /* ImageTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
