@@ -12,23 +12,25 @@ import BuddySDK
 
 
 
-class mapViewController: UIViewController {
+class mapViewController: UIViewController, MKMapViewDelegate {
     
     // MARK: Properties
     
     @IBOutlet var Map: MKMapView!
-
+    var defaultIm: UIImage = UIImage(named: "default Image")!
+    var post1 = post(image: #imageLiteral(resourceName: "default Image"), caption: "", location: nil)
     
+    
+    //var ids = ["bvc.mlnBLLJxLNJsc","bvc.cpnBLwnJLNJsc","bvc.DtbwNFvNLNJsc","bvc.KknBLFJgMNJsc","bvc.tJnBLNxmMNJsc","bvc.HmnBLMNCMNJsc"]
     override func viewDidLoad() {
         super.viewDidLoad()
         // annotations
-        let annotations
-        Buddy.get("/pictures/\(self.ids[0])/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
+        /*Buddy.get("/pictures/\(self.ids[0])/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
             if error == nil
             {
                 // Read file
                 let file: BPFile = obj as! BPFile
-                self.post1.image = UIImage.init(data: file.fileData)!
+                self.annotation1.image = UIImage.init(data: file.fileData)!
                 print("The download was successful")
             }
             else
@@ -38,6 +40,16 @@ class mapViewController: UIViewController {
                 print("The download failed")
             }
         })
+    */
+        
+        
+        let annotation1 = MKPointAnnotation.init()
+        annotation1.coordinate = CLLocationCoordinate2D(latitude: 42.372041,longitude: -71.117420)
+        annotation1.title = "test annotation"
+        annotation1.subtitle = "Testtesttest"
+        //annotation.
+        Map.addAnnotation(annotation1)
+        
         
         /*let params: [String: Any?] = [
             "contentType" : BPCoordinateRangeMake(41, -72, 20000),
@@ -77,5 +89,4 @@ class mapViewController: UIViewController {
         alertController.addAction(defaultAction)
         present (alertController, animated: true, completion: nil)
     }
-    
 }
