@@ -38,7 +38,7 @@ class postsViewController: UIViewController {
     func loadPosts()
     {
         // These are ID's of our simulated presentations because the GET query for location can't be accessed.
-        self.ids += ["bvc.GBcgHFDfPrKsc","bvc.zqcgHCtMPrKsc","bvc.MvtJJspfbsKsc","bvc.pCtJJPFpjsKsc","bvc.CHwjDNpMIsKsc","bvc.MDwDGFqmnsKsc"]
+        self.ids += ["bvc.GBcgHFDfPrKsc","bvc.zqcgHCtMPrKsc","bvc.MvtJJspfbsKsc","bvc.pCtJJPFpjsKsc","bvc.CHwjDNpMlsKsc","bvc.MDwDGFqmnsKsc"]
 
 
         
