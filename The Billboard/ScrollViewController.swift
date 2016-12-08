@@ -49,7 +49,7 @@ class ScrollViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         // Make the scroll view the ocrrect size.
         self.scrollview.contentSize = CGSize(width: (self.view.frame.width) * 3,height: (self.view.frame.height))
-        self.scrollview.contentOffset = CGPoint(x: (0), y: (0))
+        self.scrollview.contentOffset = CGPoint(x: (self.view.frame.width), y: (0))
         
         
         
