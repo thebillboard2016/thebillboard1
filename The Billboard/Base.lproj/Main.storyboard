@@ -180,7 +180,7 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3Y-JM-JGX">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Item" systemItem="camera" id="BOM-ym-SJX">
+                                    <barButtonItem systemItem="camera" id="BOM-ym-SJX">
                                         <connections>
                                             <action selector="cameraBarButton:" destination="CFT-SV-dIw" id="4Qh-BP-2xz"/>
                                         </connections>
