@@ -17,14 +17,13 @@ class mapViewController: UIViewController, MKMapViewDelegate {
     // MARK: Properties
     
     @IBOutlet var Map: MKMapView!
-    var defaultIm: UIImage = UIImage(named: "default Image")!
-    var post1 = post(image: #imageLiteral(resourceName: "default Image"), caption: "", location: nil)
     
-    
-    //var ids = ["bvc.mlnBLLJxLNJsc","bvc.cpnBLwnJLNJsc","bvc.DtbwNFvNLNJsc","bvc.KknBLFJgMNJsc","bvc.tJnBLNxmMNJsc","bvc.HmnBLMNCMNJsc"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        // annotations
+       
+        
+        // Trying to access the GET query, but commented out to at least make a simluted version of The Billboard possible
+        
         /*Buddy.get("/pictures/\(self.ids[0])/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
             if error == nil
             {
@@ -40,41 +39,76 @@ class mapViewController: UIViewController, MKMapViewDelegate {
                 print("The download failed")
             }
         })
-    */
+         */
         
+        /*let params: [String: Any?] = [
+        "contentType" : BPCoordinateRangeMake(41, -72, 20000),
+        ]
+        Buddy.get("/pictures", parameters: params, class: BPPageResults.self) { (obj: Any, error: Error?) in
+         
+        if error == nil
+        {
+            var ids = [Int]()
+            var dict = obj as! Dictionary<String, Any>
+            var numberOfResults = dict.status
+            for var i in obj.status{
+            let ids = ids + obj.result.pageResults[i].id
+        }
+        
+        }
+        else
+        {
+            print(error.debugDescription)
+        }
+        
+        }*/
+
+        // Simulated annotations for presentation due to bug
         
         let annotation1 = MKPointAnnotation.init()
         annotation1.coordinate = CLLocationCoordinate2D(latitude: 42.372041,longitude: -71.117420)
-        annotation1.title = "test annotation"
-        annotation1.subtitle = "Testtesttest"
+        annotation1.title = "Mmh that ice cream was delicious! "
+        annotation1.subtitle = "J.P. Licks Inc."
         //annotation.
         Map.addAnnotation(annotation1)
         
+        let annotation2 = MKPointAnnotation.init()
+        annotation2.coordinate = CLLocationCoordinate2D(latitude: 41.372041,longitude: -71.117420)
+        annotation2.title = "#tbt to Freshman year"
+        annotation2.subtitle = "Harvard Yard"
+        //annotation.
+        Map.addAnnotation(annotation2)
         
-        /*let params: [String: Any?] = [
-            "contentType" : BPCoordinateRangeMake(41, -72, 20000),
-        ]
-        Buddy.get("/pictures", parameters: params, class: BPPageResults.self) { (obj: Any, error: Error?) in
-            
-            if error == nil
-            {
-                // var ids = [Int]()
-                // var dict = obj as! Dictionary<String, Any>
-                // var numberOfResults = dict.status
-                //for var i in obj.status{
-                    //let ids = ids + obj.result.pageResults[i].id
-                //}
-                // print(numberOfResults)
-                
-                print(obj)
-            }
-            else
-            {
-                print(error.debugDescription)
-            }
-
-        }*/
-
+        let annotation3 = MKPointAnnotation.init()
+        annotation3.coordinate = CLLocationCoordinate2D(latitude: 40.372041,longitude: -71.117420)
+        annotation3.title = "Where'd all the leavez go?!"
+        annotation3.subtitle = "Harvard Yard"
+        //annotation.
+        Map.addAnnotation(annotation3)
+        
+        let annotation4 = MKPointAnnotation.init()
+        annotation4.coordinate = CLLocationCoordinate2D(latitude: 44.372041,longitude: -71.117420)
+        annotation4.title = "This is a road."
+        annotation4.subtitle = "Massachussetts Ave."
+        //annotation.
+        Map.addAnnotation(annotation4)
+        
+        let annotation5 = MKPointAnnotation.init()
+        annotation5.coordinate = CLLocationCoordinate2D(latitude: 49.372041,longitude: -71.117420)
+        annotation5.title = "Enter to grow in wisdom."
+        annotation5.subtitle = "Depart to serve thy country and thy kind."
+        //annotation.
+        Map.addAnnotation(annotation5)
+        
+        let annotation6 = MKPointAnnotation.init()
+        annotation6.coordinate = CLLocationCoordinate2D(latitude: 42.372041,longitude: -71.117420)
+        annotation6.title = "Xmas grinding"
+        annotation6.subtitle = "Adams House"
+        //annotation.
+        Map.addAnnotation(annotation6)
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
