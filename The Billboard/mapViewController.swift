@@ -38,6 +38,7 @@ class mapViewController: UIViewController {
                 //}
                 // print(numberOfResults)
                 
+                print(obj)
             }
             else
             {
