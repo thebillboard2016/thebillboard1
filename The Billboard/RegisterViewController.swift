@@ -110,20 +110,49 @@ class RegisterViewController: UIViewController {
             
             return
         }
+        
         // Check if username/emailaddress doesn't exist yet
         // TODO
         
         
         // Register User
         
-        Buddy.createUser(usernameField.text!, password: passwordField.text!, firstName: nil, lastName: nil, email: emailAddressField.text!, dateOfBirth: nil, gender: nil, tag: nil, callback: nil)
+        Buddy.createUser(usernameField.text!, password: passwordField.text!, firstName: nil, lastName: nil, email: emailAddressField.text!, dateOfBirth: nil, gender: nil, tag: nil, callback: {
+            (id: Any?, error: Error?) -> Void in
+            
+            // Yay! It's gone well
+            if error == nil
+            {
+                // Segue to Map
+                self.performSegue(withIdentifier: "registerSegue", sender: self)
+                
+                // Show logged in message
+                self.loggedIn()
+                
+                // Empty fields
+                self.usernameField.text?.removeAll()
+                self.emailAddressField.text?.removeAll()
+                self.passwordField.text?.removeAll()
+                self.confirmPasswordField.text?.removeAll()
+                
+            }
+            
+            // Darn, something bad has happened.
+            else
+            {
+                // Show registration error
+                self.registrationFailed()
+                
+                // Empty fields
+                self.usernameField.text?.removeAll()
+                self.emailAddressField.text?.removeAll()
+                self.passwordField.text?.removeAll()
+                self.confirmPasswordField.text?.removeAll()
+                
+            }
+        })
+    
         
-        
-        // Empty fields
-        usernameField.text?.removeAll()
-        emailAddressField.text?.removeAll()
-        passwordField.text?.removeAll()
-        confirmPasswordField.text?.removeAll()
         
         // Log user out
         // Buddy.logoutUser(<#T##callback: BuddyCompletionCallback!##BuddyCompletionCallback!##(Error?) -> Void#>)
@@ -155,6 +184,21 @@ class RegisterViewController: UIViewController {
         present (alertController, animated: true, completion: nil)
     }
 
+    func registrationFailed(){
+        let alertController = UIAlertController(title: "Registration Failed", message: "Registration has failed, your username or email address is already in use.", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        present (alertController, animated: true, completion: nil)
+    }
+
+    func loggedIn(){
+        let alertController = UIAlertController(title: "You have been logged in", message: "", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        present (alertController, animated: true, completion: nil)
+    }
+
+
     /*
     // MARK: - Navigation
 
@@ -164,5 +208,4 @@ class RegisterViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
