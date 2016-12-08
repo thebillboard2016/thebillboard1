@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import BuddySDK
 
 
 
@@ -22,9 +23,29 @@ class mapViewController: UIViewController {
         super.viewDidLoad()
         // annotations
         
-        
-        
-        let
+        let params: [String: Any?] = [
+            "contentType" : BPCoordinateRangeMake(41, -72, 20000),
+        ]
+        Buddy.get("/pictures", parameters: params, class: BPPageResults.self) { (obj: Any, error: Error?) in
+            
+            if error == nil
+            {
+                var ids = [Int]()
+                var dict = obj as! Dictionary<String, Any>
+                var numberOfResults = dict.status
+                //for var i in obj.status{
+                    //let ids = ids + obj.result.pageResults[i].id
+                //}
+                print(numberOfResults)
+                
+            }
+            else
+            {
+                print(error.debugDescription)
+            }
+
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
