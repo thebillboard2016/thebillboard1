@@ -33,17 +33,27 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
     }
     
     @IBAction func uploadAction(_ sender: UIBarButtonItem) {
-        let imageData = UIImageJPEGRepresentation(takenImage.image!, 0.6)
-        let compressedImage = UIImage(data: imageData!)
-        //UPLOAD
-        uploadNotice()
+        if takenImage.image != nil{
+            let imageData = UIImageJPEGRepresentation(takenImage.image!, 0.6)
+            let compressedImage = UIImage(data: imageData!)
+            //UPLOAD
+            uploadNotice()
+        }
+        else{
+            uploadNotice()
+        }
     }
     
     @IBAction func saveBarButton(_ sender: UIBarButtonItem) {
-        let imageData = UIImageJPEGRepresentation(takenImage.image!, 0.6)
-        let compressedImage = UIImage(data: imageData!)
-        UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
-        saveNotice()
+        if takenImage.image != nil{
+            let imageData = UIImageJPEGRepresentation(takenImage.image!, 0.6)
+            let compressedImage = UIImage(data: imageData!)
+            UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
+            saveNotice()
+        }
+        else{
+            saveNotice()
+        }
     }
     
 
@@ -74,17 +84,34 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
     
     //Notices for uploading and saving the image.
     func uploadNotice(){
-        let alertController = UIAlertController(title: "Upload", message: "Your image has been uploaded", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(defaultAction)
-        present (alertController, animated: true, completion: nil)
+        if takenImage.image != nil{
+            let alertController = UIAlertController(title: "Upload", message: "Your image has been uploaded", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(defaultAction)
+            present (alertController, animated: true, completion: nil)
+        }
+        else{
+            let alertController = UIAlertController(title: "Upload", message: "You must select an image to upload first!", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(defaultAction)
+            present (alertController, animated: true, completion: nil)
+        }
     }
     
     func saveNotice(){
-        let alertController = UIAlertController(title: "Save", message: "Your image has been Saved", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(defaultAction)
-        present (alertController, animated: true, completion: nil)
+        if takenImage.image != nil{
+            let alertController = UIAlertController(title: "Save", message: "Your image has been Saved", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(defaultAction)
+            present (alertController, animated: true, completion: nil)
+        }
+        else{
+            let alertController = UIAlertController(title: "Save", message: "You must select an image to save first!", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(defaultAction)
+            present (alertController, animated: true, completion: nil)
+        }
+        
     }
     
 }

@@ -39,26 +39,24 @@ class ViewController: UIViewController {
             
             if error == nil
             {
-                // Output
-                print("Login successful")
-                
                 // Segue to Map
                 self.performSegue(withIdentifier: "loginSegue", sender: self)
-                
-                
             }
             else
             {
-                // Output
-                print("Login failed")
-                
                 // Empty fields
                 self.passwordLoginField.text?.removeAll()
                 
-                // Display error message
-                // TODO
+                self.usernameLoginField.layer.cornerRadius = 6.0
+                self.usernameLoginField.layer.masksToBounds = true
+                self.usernameLoginField.layer.borderWidth = 1
+                self.usernameLoginField.layer.borderColor = UIColor.red.cgColor
+                self.passwordLoginField.layer.cornerRadius = 6.0
+                self.passwordLoginField.layer.masksToBounds = true
+                self.passwordLoginField.layer.borderWidth = 1
+                self.passwordLoginField.layer.borderColor = UIColor.red.cgColor
                 
-                
+                self.loginFailed()
             }
         })
         
@@ -74,7 +72,12 @@ class ViewController: UIViewController {
         
     }
     
-    
+    func loginFailed(){
+        let alertController = UIAlertController(title: "login Failed", message: "Username and password do not match, either register for an account or re-enter username and password.", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        present (alertController, animated: true, completion: nil)
     
 }
 
+}
