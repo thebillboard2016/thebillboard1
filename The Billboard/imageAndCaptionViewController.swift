@@ -24,7 +24,7 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
         uploadLocation = (manager.location?.coordinate)!
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print ("THE LOCATION IS BROKEN")
+        theMapIsBroken()
     }
     
     override func viewDidLoad() {
@@ -82,7 +82,6 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
             Buddy.post("/pictures", parameters: imageToSend, class: BPPicture.self, callback: { (x:Any?, error:Error?) in
                 print(error.debugDescription)
             })
-            print(uploadLocation)
             uploadNotice()
         }
         else{
@@ -131,7 +130,7 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
     //Notices for uploading and saving the image.
     func uploadNotice(){
         if takenImage.image != nil{
-            let alertController = UIAlertController(title: "Upload", message: "Your image has been uploaded", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Upload", message: "Your image has been uploaded.", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alertController.addAction(defaultAction)
             present (alertController, animated: true, completion: nil)
@@ -145,7 +144,7 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
     }
     func saveNotice(){
         if takenImage.image != nil{
-            let alertController = UIAlertController(title: "Save", message: "Your image has been Saved", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Save", message: "Your image has been Saved.", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alertController.addAction(defaultAction)
             present (alertController, animated: true, completion: nil)
@@ -158,6 +157,12 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
         }
         
     }
+    func theMapIsBroken(){
+        let alertController = UIAlertController(title: "Location", message: "There is an unknown location service error.", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        present (alertController, animated: true, completion: nil)
+        }
     
 }
 
