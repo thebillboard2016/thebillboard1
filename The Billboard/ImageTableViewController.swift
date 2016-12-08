@@ -36,13 +36,7 @@ class ImageTableViewController: UITableViewController {
         
     }
     
-    
-    
-    
-    
-    
-    
-    
+
     
 
     override func didReceiveMemoryWarning() {
@@ -53,24 +47,31 @@ class ImageTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return posts.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        // Table view cells are reused and should be dequeued using a cell identifier.
+        let cellIdentifier = "PostTableViewCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PostTableViewCell
 
-        // Configure the cell...
+        // Fetches the appropriate post for the data source layout.
+        let postCell = posts[indexPath.row]
 
+        cell.caption.text = postCell.caption
+        cell.imageView?.image = postCell.image
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

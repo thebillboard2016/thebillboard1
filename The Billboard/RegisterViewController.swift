@@ -131,7 +131,7 @@ class RegisterViewController: UIViewController {
     }
     
     
-// ERROR NOTICES
+    // ERROR NOTICES
     // Password too short error
     func passwordLengthNotice(){
         let alertController = UIAlertController(title: "Password", message: "Password must be 6 or more characters.", preferredStyle: .alert)
