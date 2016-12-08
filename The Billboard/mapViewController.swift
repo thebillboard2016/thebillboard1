@@ -30,14 +30,8 @@ class mapViewController: UIViewController {
             
             if error == nil
             {
-                var ids = [Int]()
-                var dict = obj as! Dictionary<String, Any>
-                var numberOfResults = dict.status
-                //for var i in obj.status{
-                    //let ids = ids + obj.result.pageResults[i].id
-                //}
-                print(numberOfResults)
                 
+                print(obj)
             }
             else
             {
