@@ -22,12 +22,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Billboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgv-Uv-wQt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Billboard" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgv-Uv-wQt">
                                 <rect key="frame" x="16" y="28" width="343" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="TzG-06-FsH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name=".SFNSDisplay-Regular" family=".SF NS Display" pointSize="26"/>
+                                <fontDescription key="fontDescription" name="MingLiU" family="MingLiU" pointSize="29"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -233,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oBF-aN-MNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2475.5" y="35.5"/>
+            <point key="canvasLocation" x="2488.8000000000002" y="35.532233883058474"/>
         </scene>
         <!--Posts View Controller-->
         <scene sceneID="Xsf-1M-lEJ">
@@ -246,12 +246,68 @@
                     <view key="view" contentMode="scaleToFill" id="2jT-KG-ttE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ebf-j5-XEh">
+                                <rect key="frame" x="16" y="135" width="163" height="156"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K8y-Lr-oEK">
+                                <rect key="frame" x="196" y="311" width="163" height="156"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bhJ-SY-vnB">
+                                <rect key="frame" x="16" y="490" width="163" height="157"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4NA-ir-cww">
+                                <rect key="frame" x="196" y="490" width="163" height="157"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.050000000000000003" height="0.050000000000000003"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gyh-Qk-2S2">
+                                <rect key="frame" x="16" y="311" width="163" height="156"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JDf-hQ-hQK">
+                                <rect key="frame" x="196" y="135" width="163" height="156"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cce-cj-3KS">
+                                <rect key="frame" x="16" y="28" width="343" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Your">
+                                        <attributes>
+                                            <font key="NSFont" size="21" name="Braggadocio"/>
+                                            <font key="NSOriginalFont" size="24" name="Braggadocio"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" Local Billboard">
+                                        <attributes>
+                                            <font key="NSFont" size="24" name="Braggadocio"/>
+                                            <font key="NSOriginalFont" size="24" name="Braggadocio"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="post1" destination="ebf-j5-XEh" id="d5j-NI-Jrs"/>
+                        <outlet property="post2" destination="K8y-Lr-oEK" id="gAo-ee-9Gr"/>
+                        <outlet property="post3" destination="gyh-Qk-2S2" id="AB4-6d-nSD"/>
+                        <outlet property="post4" destination="JDf-hQ-hQK" id="OGD-rA-Efj"/>
+                        <outlet property="post5" destination="bhJ-SY-vnB" id="oYP-HX-OHS"/>
+                        <outlet property="post6" destination="4NA-ir-cww" id="B5q-HB-2cG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aOW-8z-kWS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2474" y="810"/>
+            <point key="canvasLocation" x="2472.8000000000002" y="809.14542728635683"/>
         </scene>
         <!--Scroll View Controller-->
         <scene sceneID="tiD-B8-yxu">
@@ -413,6 +469,6 @@
         <image name="Maps tab bar icon" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1dU-eC-TkL"/>
+        <segue reference="4Sg-ZB-3A7"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,14 +7,151 @@
 //
 
 import UIKit
+import BuddySDK
 
 class postsViewController: UIViewController {
 
+    // Properties
+    @IBOutlet weak var post1: UIImageView!
+    @IBOutlet weak var post2: UIImageView!
+    @IBOutlet weak var post3: UIImageView!
+    @IBOutlet weak var post4: UIImageView!
+    @IBOutlet weak var post5: UIImageView!
+    @IBOutlet weak var post6: UIImageView!
+
+
+    //
+    var ids = [String]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Load sample posts
+        loadPosts()
+        
     }
+    
+    
+    // Functions
+    
+    func loadPosts()
+    {
+        self.ids += ["bvc.mlnBLLJxLNJsc","bvc.cpnBLwnJLNJsc","bvc.DtbwNFvNLNJsc","bvc.KknBLFJgMNJsc","bvc.tJnBLNxmMNJsc","bvc.HmnBLMNCMNJsc"]
+
+        // This isn't good design but we can't see a better way of implementing this.
+        
+        // ----------------  1  ----------------
+        // GET
+        Buddy.get("/pictures/\(self.ids[0])/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
+            if error == nil
+            {
+                // Read file
+                let file: BPFile = obj as! BPFile
+                self.post1.image = UIImage.init(data: file.fileData)!
+                print("The download was successful")
+            }
+            else
+            {
+                // Error downloading
+                print(error.debugDescription)
+                print("The download failed")
+            }
+        })
+        
+        // ----------------  2  ----------------
+        // GET
+        Buddy.get("/pictures/\(self.ids[1])/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
+            if error == nil
+            {
+                // Read file
+                let file: BPFile = obj as! BPFile
+                self.post2.image = UIImage.init(data: file.fileData)!
+                print("The download was successful")
+            }
+            else
+            {
+                // Error downloading
+                print(error.debugDescription)
+                print("The download failed")
+            }
+        })
+        // ----------------  3  ----------------
+        // GET
+        Buddy.get("/pictures/\(self.ids[2])/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
+            if error == nil
+            {
+                // Read file
+                let file: BPFile = obj as! BPFile
+                self.post3.image = UIImage.init(data: file.fileData)!
+                print("The download was successful")
+            }
+            else
+            {
+                // Error downloading
+                print(error.debugDescription)
+                print("The download failed")
+            }
+        })
+        // ----------------  4  ----------------
+        // GET
+        Buddy.get("/pictures/\(self.ids[3])/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
+            if error == nil
+            {
+                // Read file
+                let file: BPFile = obj as! BPFile
+                self.post4.image = UIImage.init(data: file.fileData)!
+                print("The download was successful")
+            }
+            else
+            {
+                // Error downloading
+                print(error.debugDescription)
+                print("The download failed")
+            }
+        })
+        // ----------------  5  ----------------
+        // GET
+        Buddy.get("/pictures/\(self.ids[4])/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
+            if error == nil
+            {
+                // Read file
+                let file: BPFile = obj as! BPFile
+                self.post5.image = UIImage.init(data: file.fileData)!
+                print("The download was successful")
+            }
+            else
+            {
+                // Error downloading
+                print(error.debugDescription)
+                print("The download failed")
+            }
+        })
+        // ----------------  6  ----------------
+        // GET
+        Buddy.get("/pictures/\(self.ids[5])/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
+            if error == nil
+            {
+                // Read file
+                let file: BPFile = obj as! BPFile
+                self.post6.image = UIImage.init(data: file.fileData)!
+                print("The download was successful")
+            }
+            else
+            {
+                // Error downloading
+                print(error.debugDescription)
+                print("The download failed")
+            }
+        })
+        
+        
+        
+        
+    }
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
