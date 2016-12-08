@@ -17,13 +17,12 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
     @IBOutlet var takenImage: UIImageView!
     @IBOutlet weak var captionTextField: UITextField!
     
-    // Location variable
+    // Location things
     let locationManager = CLLocationManager()
-    
+    var uploadLocation: CLLocationCoordinate2D = CLLocationCoordinate2D.init(latitude: 0, longitude: 0)
     func locationManager(_ manager:CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("locations = \(locations)")
+        uploadLocation = (manager.location?.coordinate)!
     }
-    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print ("THE LOCATION IS BROKEN")
     }
@@ -70,7 +69,7 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
             
             let imageToSend: [String: Any?] = [
                 "data" : file,
-                "location" : BPCoordinateMake(0, 0),
+                "location" : BPCoordinateMake(uploadLocation.latitude, uploadLocation.latitude),
                 "caption" : captionTextField.text!,
                 "tag" : nil,
                 "watermark" : nil,
@@ -83,6 +82,7 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
             Buddy.post("/pictures", parameters: imageToSend, class: BPPicture.self, callback: { (x:Any?, error:Error?) in
                 print(error.debugDescription)
             })
+            print(uploadLocation)
             uploadNotice()
         }
         else{
