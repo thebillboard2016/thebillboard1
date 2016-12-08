@@ -120,25 +120,39 @@ class RegisterViewController: UIViewController {
         Buddy.createUser(usernameField.text!, password: passwordField.text!, firstName: nil, lastName: nil, email: emailAddressField.text!, dateOfBirth: nil, gender: nil, tag: nil, callback: {
             (id: Any?, error: Error?) -> Void in
             
+            // Yay! It's gone well
             if error == nil
             {
                 // Segue to Map
                 self.performSegue(withIdentifier: "registerSegue", sender: self)
+                
+                // Show logged in message
                 self.loggedIn()
+                
+                // Empty fields
+                self.usernameField.text?.removeAll()
+                self.emailAddressField.text?.removeAll()
+                self.passwordField.text?.removeAll()
+                self.confirmPasswordField.text?.removeAll()
+                
             }
+            
+            // Darn, something bad has happened.
             else
             {
-                
+                // Show registration error
                 self.registrationFailed()
+                
+                // Empty fields
+                self.usernameField.text?.removeAll()
+                self.emailAddressField.text?.removeAll()
+                self.passwordField.text?.removeAll()
+                self.confirmPasswordField.text?.removeAll()
+                
             }
         })
     
         
-        // Empty fields
-        usernameField.text?.removeAll()
-        emailAddressField.text?.removeAll()
-        passwordField.text?.removeAll()
-        confirmPasswordField.text?.removeAll()
         
         // Log user out
         // Buddy.logoutUser(<#T##callback: BuddyCompletionCallback!##BuddyCompletionCallback!##(Error?) -> Void#>)
