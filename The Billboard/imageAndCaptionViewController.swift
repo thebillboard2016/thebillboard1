@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BuddySDK
 
 class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -34,9 +35,24 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
     
     @IBAction func uploadAction(_ sender: UIBarButtonItem) {
         if takenImage.image != nil{
-            let imageData = UIImageJPEGRepresentation(takenImage.image!, 0.6)
-            let compressedImage = UIImage(data: imageData!)
-            //UPLOAD
+            //let imageData = UIImageJPEGRepresentation(takenImage.image!, 0.6)
+            //let compressedImage = UIImage(data: imageData!)
+            let file:BPFile = BPFile()
+            file.contentType = "image/jpg"
+            file.fileData = UIImageJPEGRepresentation(takenImage.image!, 0.8)
+            
+            let imageToSend: [String: Any?] = [
+                "data" : file,
+                "location" : BPCoordinateMake(42, 71),
+                "caption" : captionTextField.text!,
+                "tag" : nil,
+                "watermark" : nil,
+                "readPermissions" : nil,
+                "writePermissions" : nil,
+                "title" : nil,
+                "useExifData" : nil
+                ]
+            Buddy.post("/pictures", parameters: imageToSend, class: BPPicture.self, callback: nil)
             uploadNotice()
         }
         else{
