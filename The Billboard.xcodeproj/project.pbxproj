@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		088C8D132C23B8E33A0A7FC9 /* Pods_The_Billboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BCD87A95D4A48F253A43A90 /* Pods_The_Billboard.framework */; };
 		222D92A81DF655A80008C94D /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222D92A71DF655A80008C94D /* ScrollViewController.swift */; };
-		2253932C1DF08004002F69F6 /* postsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253932B1DF08004002F69F6 /* postsTableViewController.swift */; };
 		2253932E1DF088CE002F69F6 /* mapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253932D1DF088CE002F69F6 /* mapViewController.swift */; };
 		22B29D901DF7E7120047CF52 /* Image_and_caption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B29D8F1DF7E7120047CF52 /* Image_and_caption.swift */; };
 		22B29D931DF7F21C0047CF52 /* imageAndCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B29D921DF7F21C0047CF52 /* imageAndCaptionViewController.swift */; };
@@ -46,7 +45,6 @@
 /* Begin PBXFileReference section */
 		0EC7C0807E250C0EE959F9C1 /* Pods-The Billboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Billboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-The Billboard/Pods-The Billboard.release.xcconfig"; sourceTree = "<group>"; };
 		222D92A71DF655A80008C94D /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
-		2253932B1DF08004002F69F6 /* postsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = postsTableViewController.swift; sourceTree = "<group>"; };
 		2253932D1DF088CE002F69F6 /* mapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mapViewController.swift; sourceTree = "<group>"; };
 		22B29D8F1DF7E7120047CF52 /* Image_and_caption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Image_and_caption.swift; path = ../Image_and_caption.swift; sourceTree = "<group>"; };
 		22B29D921DF7F21C0047CF52 /* imageAndCaptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageAndCaptionViewController.swift; sourceTree = "<group>"; };
@@ -182,7 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				46D2496B1DF8AB5F00C0E36F /* ImageTableViewController.swift */,
-				2253932B1DF08004002F69F6 /* postsTableViewController.swift */,
 				2253932D1DF088CE002F69F6 /* mapViewController.swift */,
 				46FBEEC91DEE624000BEB059 /* RegisterViewController.swift */,
 				46FBEE961DEE568800BEB059 /* ViewController.swift */,
@@ -397,7 +394,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2253932C1DF08004002F69F6 /* postsTableViewController.swift in Sources */,
 				46FBEE971DEE568800BEB059 /* ViewController.swift in Sources */,
 				222D92A81DF655A80008C94D /* ScrollViewController.swift in Sources */,
 				2253932E1DF088CE002F69F6 /* mapViewController.swift in Sources */,
