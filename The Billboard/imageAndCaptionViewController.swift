@@ -73,7 +73,7 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
                 "caption" : captionTextField.text!,
                 "tag" : nil,
                 "watermark" : nil,
-                "readPermissions" : nil,
+                "readPermissions" : "app",
                 "writePermissions" : nil,
                 "title" : nil,
                 "useExifData" : nil
@@ -163,6 +163,13 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
         alertController.addAction(defaultAction)
         present (alertController, animated: true, completion: nil)
         }
+    
+    func theUploadFunctionIsBroken(){
+        let alertController = UIAlertController(title: "Upload", message: "The upload has failed.", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        present (alertController, animated: true, completion: nil)
+    }
     
 }
 
