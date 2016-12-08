@@ -27,7 +27,7 @@ class postsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Load sample posts
+        // Load sample posts for simulation since query can't be accessed
         loadPosts()
         
     }
@@ -37,9 +37,10 @@ class postsViewController: UIViewController {
     
     func loadPosts()
     {
-        self.ids += ["bvc.mlnBLLJxLNJsc","bvc.cpnBLwnJLNJsc","bvc.DtbwNFvNLNJsc","bvc.KknBLFJgMNJsc","bvc.tJnBLNxmMNJsc","bvc.HmnBLMNCMNJsc"]
+        // These are ID's of our simulated presentations because the GET query for location can't be accessed.
+        self.ids += ["bvc.GBcgHFDfPrKsc","bvc.zqcgHCtMPrKsc","bvc.MvtJJspfbsKsc","bvc.pCtJJPFpjsKsc","bvc.CHwjDNpMIsKsc","bvc.MDwDGFqmnsKsc"]
 
-        // This isn't good design but we can't see a better way of implementing this.
+
         
         // ----------------  1  ----------------
         // GET
