@@ -9,6 +9,7 @@
 import UIKit
 import BuddySDK
 import CoreLocation
+import MapKit
 
 class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
 
@@ -18,6 +19,14 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
     
     // Location variable
     let locationManager = CLLocationManager()
+    
+    func locationManager(_ manager:CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("locations = \(locations)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print ("THE LOCATION IS BROKEN")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,13 +62,6 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
         if takenImage.image != nil{
             
             // Fetch the users coordinates at time of uploading
-            
-            //var locValue: CLLocationCoordinate2D = CLLocationCoordinate2D.init(latitude: 0,longitude: 0)
-            
-            func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-                let locValue: CLLocation = locations[0]
-                print(locValue.coordinate.longitude)
-            }
             
             // Convert file from UIImage to BP and upload
             let file:BPFile = BPFile()
