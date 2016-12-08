@@ -1,5 +1,5 @@
 //
-//  Image_and_caption.swift
+//  post.swift
 //  The Billboard
 //
 //  Created by Samuel Meijer on 07/12/2016.
