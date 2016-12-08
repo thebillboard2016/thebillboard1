@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import BuddySDK
 
 class ImageTableViewController: UITableViewController {
 
@@ -28,10 +29,30 @@ class ImageTableViewController: UITableViewController {
     
     func loadSamplePost()
     {
-        
+        // Static default for testing
         let photo1 = UIImage(named: "default Image")!
         let post1 = post(image: photo1, caption: "This is a post", location: nil)
         
+        /*
+        let picture_id = "bvc.HmwDGPzwpCJsc"
+        
+        Buddy.get("/pictures/\(picture_id)/file", parameters: nil, class: BPFile.self) { (obj: Any?, error: Error?) in
+            
+            if error == nil
+            {
+                let file: BPFile = obj as! BPFile
+                let image: UIImage = UIImage.init(data: file.fileData)!
+            }
+            else
+            {
+                print(error.debugDescription)
+            }
+        }
+
+
+        
+        let post1 =
+        */
         posts += [post1]
         
     }
