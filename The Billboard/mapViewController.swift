@@ -66,42 +66,42 @@ class mapViewController: UIViewController, MKMapViewDelegate {
         // Simulated annotations for presentation due to bug
         
         let annotation1 = MKPointAnnotation.init()
-        annotation1.coordinate = CLLocationCoordinate2D(latitude: 42.372041,longitude: -71.117420)
+        annotation1.coordinate = CLLocationCoordinate2D(latitude: 42.372970,longitude: -71.117487)
         annotation1.title = "Mmh that ice cream was delicious! "
         annotation1.subtitle = "J.P. Licks Inc."
         //annotation.
         Map.addAnnotation(annotation1)
         
         let annotation2 = MKPointAnnotation.init()
-        annotation2.coordinate = CLLocationCoordinate2D(latitude: 41.372041,longitude: -71.117420)
+        annotation2.coordinate = CLLocationCoordinate2D(latitude: 42.373117,longitude: -71.117019)
         annotation2.title = "#tbt to Freshman year"
         annotation2.subtitle = "Harvard Yard"
         //annotation.
         Map.addAnnotation(annotation2)
         
         let annotation3 = MKPointAnnotation.init()
-        annotation3.coordinate = CLLocationCoordinate2D(latitude: 40.372041,longitude: -71.117420)
+        annotation3.coordinate = CLLocationCoordinate2D(latitude: 42.373115,longitude: -71.117021)
         annotation3.title = "Where'd all the leavez go?!"
         annotation3.subtitle = "Harvard Yard"
         //annotation.
         Map.addAnnotation(annotation3)
         
         let annotation4 = MKPointAnnotation.init()
-        annotation4.coordinate = CLLocationCoordinate2D(latitude: 44.372041,longitude: -71.117420)
+        annotation4.coordinate = CLLocationCoordinate2D(latitude: 42.372661,longitude: -71.116419)
         annotation4.title = "This is a road."
         annotation4.subtitle = "Massachussetts Ave."
         //annotation.
         Map.addAnnotation(annotation4)
         
         let annotation5 = MKPointAnnotation.init()
-        annotation5.coordinate = CLLocationCoordinate2D(latitude: 49.372041,longitude: -71.117420)
+        annotation5.coordinate = CLLocationCoordinate2D(latitude: 42.372663,longitude: -71.116417)
         annotation5.title = "Enter to grow in wisdom."
-        annotation5.subtitle = "Depart to serve thy country and thy kind."
+        annotation5.subtitle = "Massachussetts Ave."
         //annotation.
         Map.addAnnotation(annotation5)
         
         let annotation6 = MKPointAnnotation.init()
-        annotation6.coordinate = CLLocationCoordinate2D(latitude: 42.372041,longitude: -71.117420)
+        annotation6.coordinate = CLLocationCoordinate2D(latitude: 42.371785,longitude: -71.116407)
         annotation6.title = "Xmas grinding"
         annotation6.subtitle = "Adams House"
         //annotation.
