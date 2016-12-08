@@ -8,7 +8,7 @@
 
 import UIKit
 import MapKit
-import CoreLocation
+
 
 
 class mapViewController: UIViewController {
@@ -17,10 +17,10 @@ class mapViewController: UIViewController {
     
     @IBOutlet var Map: MKMapView!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,15 +28,12 @@ class mapViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Provides error information to the user
+    func theMapIsBroken(){
+        let alertController = UIAlertController(title: "Map", message: "There is an unknown map error.", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        present (alertController, animated: true, completion: nil)
     }
-    */
-
+    
 }
