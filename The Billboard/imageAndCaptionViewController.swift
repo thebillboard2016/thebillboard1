@@ -9,6 +9,7 @@
 import UIKit
 import BuddySDK
 import CoreLocation
+import MapKit
 
 class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
 
@@ -16,8 +17,15 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
     @IBOutlet var takenImage: UIImageView!
     @IBOutlet weak var captionTextField: UITextField!
     
-    // Location variable
+    // Location things
     let locationManager = CLLocationManager()
+    var uploadLocation: CLLocationCoordinate2D = CLLocationCoordinate2D.init(latitude: 0, longitude: 0)
+    func locationManager(_ manager:CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        uploadLocation = (manager.location?.coordinate)!
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        theMapIsBroken()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,13 +62,6 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
             
             // Fetch the users coordinates at time of uploading
             
-            //var locValue: CLLocationCoordinate2D = CLLocationCoordinate2D.init(latitude: 0,longitude: 0)
-            
-            func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-                let locValue: CLLocation = locations[0]
-                print(locValue.coordinate.longitude)
-            }
-            
             // Convert file from UIImage to BP and upload
             let file:BPFile = BPFile()
             file.contentType = "image/jpg"
@@ -68,11 +69,11 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
             
             let imageToSend: [String: Any?] = [
                 "data" : file,
-                "location" : BPCoordinateMake(0, 0),
+                "location" : BPCoordinateMake(uploadLocation.latitude, uploadLocation.latitude),
                 "caption" : captionTextField.text!,
                 "tag" : nil,
                 "watermark" : nil,
-                "readPermissions" : nil,
+                "readPermissions" : "app",
                 "writePermissions" : nil,
                 "title" : nil,
                 "useExifData" : nil
@@ -129,7 +130,7 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
     //Notices for uploading and saving the image.
     func uploadNotice(){
         if takenImage.image != nil{
-            let alertController = UIAlertController(title: "Upload", message: "Your image has been uploaded", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Upload", message: "Your image has been uploaded.", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alertController.addAction(defaultAction)
             present (alertController, animated: true, completion: nil)
@@ -143,7 +144,7 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
     }
     func saveNotice(){
         if takenImage.image != nil{
-            let alertController = UIAlertController(title: "Save", message: "Your image has been Saved", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Save", message: "Your image has been Saved.", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alertController.addAction(defaultAction)
             present (alertController, animated: true, completion: nil)
@@ -155,6 +156,19 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
             present (alertController, animated: true, completion: nil)
         }
         
+    }
+    func theMapIsBroken(){
+        let alertController = UIAlertController(title: "Location", message: "There is an unknown location service error.", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        present (alertController, animated: true, completion: nil)
+        }
+    
+    func theUploadFunctionIsBroken(){
+        let alertController = UIAlertController(title: "Upload", message: "The upload has failed.", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        present (alertController, animated: true, completion: nil)
     }
     
 }
