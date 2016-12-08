@@ -8,15 +8,31 @@
 
 import UIKit
 import BuddySDK
+import CoreLocation
 
-class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
 
-    //Properties
+    // Properties
     @IBOutlet var takenImage: UIImageView!
     @IBOutlet weak var captionTextField: UITextField!
     
+    // Location variable
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Instantiate the loaction things
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
         
         // Allow the keyboard to be removed by a tap
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageAndCaptionViewController.dismissKeyboard))
@@ -35,15 +51,24 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
     
     @IBAction func uploadAction(_ sender: UIBarButtonItem) {
         if takenImage.image != nil{
-            //let imageData = UIImageJPEGRepresentation(takenImage.image!, 0.6)
-            //let compressedImage = UIImage(data: imageData!)
+            
+            // Fetch the users coordinates at time of uploading
+            
+            //var locValue: CLLocationCoordinate2D = CLLocationCoordinate2D.init(latitude: 0,longitude: 0)
+            
+            func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+                let locValue: CLLocation = locations[0]
+                print(locValue.coordinate.longitude)
+            }
+            
+            // Convert file from UIImage to BP and upload
             let file:BPFile = BPFile()
             file.contentType = "image/jpg"
             file.fileData = UIImageJPEGRepresentation(takenImage.image!, 0.8)
             
             let imageToSend: [String: Any?] = [
                 "data" : file,
-                "location" : BPCoordinateMake(42, 71),
+                "location" : BPCoordinateMake(0, 0),
                 "caption" : captionTextField.text!,
                 "tag" : nil,
                 "watermark" : nil,
@@ -52,7 +77,10 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
                 "title" : nil,
                 "useExifData" : nil
                 ]
-            Buddy.post("/pictures", parameters: imageToSend, class: BPPicture.self, callback: nil)
+            
+            Buddy.post("/pictures", parameters: imageToSend, class: BPPicture.self, callback: { (x:Any?, error:Error?) in
+                print(error.debugDescription)
+            })
             uploadNotice()
         }
         else{
@@ -113,7 +141,6 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
             present (alertController, animated: true, completion: nil)
         }
     }
-    
     func saveNotice(){
         if takenImage.image != nil{
             let alertController = UIAlertController(title: "Save", message: "Your image has been Saved", preferredStyle: .alert)
