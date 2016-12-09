@@ -39,30 +39,50 @@ class mapViewController: UIViewController, MKMapViewDelegate {
                 print("The download failed")
             }
         })
-         */
+        */
         
-        /*let params: [String: Any?] = [
-        "contentType" : BPCoordinateRangeMake(41, -72, 20000),
+        let params: [String: Any?] = [
+            "ownerID": nil,
+            "contentType":nil,
+            "caption": nil,
+            "locationRange" : nil,
+            "created": nil,
+            "lastModified": nil,
+            "sortOrder": nil,
+            "pagingToken": nil,
+            "title": nil
         ]
+        
+        /*
         Buddy.get("/pictures", parameters: params, class: BPPageResults.self) { (obj: Any, error: Error?) in
-         
+            
         if error == nil
         {
-            var ids = [Int]()
-            var dict = obj as! Dictionary<String, Any>
-            var numberOfResults = dict.status
-            for var i in obj.status{
-            let ids = ids + obj.result.pageResults[i].id
-        }
-        
+            
+            let results: BPPageResults = obj as! BPPageResults
+            
+            print(results.pageResults)
+            
+            /*
+            do {
+                let json = try JSONSerialization.jsonObject(with: results.pageResults[0] as! Data, options: JSONSerialization.ReadingOptions()) as? Array<Any>
+                print(json)
+            } catch {
+                print(error)
+            }
+            */
+            
+
+            
         }
         else
         {
             print(error.debugDescription)
         }
+        }
+ 
+        */
         
-        }*/
-
         // Simulated annotations for presentation due to bug
         
         let annotation1 = MKPointAnnotation.init()

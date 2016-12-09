@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -142,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ACw-9P-rdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3319" y="36"/>
+            <point key="canvasLocation" x="3458" y="-97"/>
         </scene>
         <!--Image And Caption View Controller-->
         <scene sceneID="PwI-nq-p6W">
@@ -503,7 +503,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vrI-39-0Yp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="QzO-9Z-pIo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="988" y="795"/>
+            <point key="canvasLocation" x="225" y="804"/>
         </scene>
     </scenes>
     <resources>
@@ -511,6 +511,6 @@
         <image name="Maps tab bar icon" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4Sg-ZB-3A7"/>
+        <segue reference="1dU-eC-TkL"/>
     </inferredMetricsTieBreakers>
 </document>
