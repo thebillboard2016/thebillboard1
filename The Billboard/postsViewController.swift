@@ -20,9 +20,17 @@ class postsViewController: UIViewController, UINavigationControllerDelegate, CLL
     @IBOutlet weak var post5: UIImageView!
     @IBOutlet weak var post6: UIImageView!
 
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var label3: UILabel!
+    @IBOutlet weak var label4: UILabel!
+    @IBOutlet weak var label5: UILabel!
+    @IBOutlet weak var label6: UILabel!
+    
 
-    //
+    // Arrays for windows
     var ids = [String]()
+    var captions = [String]()
     
     
     // Location things
@@ -62,8 +70,7 @@ class postsViewController: UIViewController, UINavigationControllerDelegate, CLL
     {
 
         
-        // This gets 1 location
-        
+        // Search for close posts
         let params: [String: Any?] = [
             "ownerID": nil,
             "contentType":nil,
@@ -84,16 +91,18 @@ class postsViewController: UIViewController, UINavigationControllerDelegate, CLL
                 // Convert return type to NSMutableDictionary
                 let results: BPPageResults = back as! BPPageResults
                 
+                // populate arrays
                 for index in 0...5                {
                     let dict: NSMutableDictionary = results.pageResults[index] as! NSMutableDictionary
                     let id = dict["id"]!
+                    let cap = dict["caption"]
                     self.ids.append(id as! String)
+                    self.captions.append(cap as! String)
                     print(self.ids)
                 }
+
                 
-                
-                
-                
+                // Set up each window
                 // ----------------  1  ----------------
                 // GET
                 Buddy.get("/pictures/\(self.ids[0])/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
@@ -102,6 +111,7 @@ class postsViewController: UIViewController, UINavigationControllerDelegate, CLL
                         // Read file
                         let file: BPFile = obj as! BPFile
                         self.post1.image = UIImage.init(data: file.fileData)!
+                        self.label1.text = self.captions[0]
                         print("The download was successful")
                     }
                     else
@@ -120,6 +130,7 @@ class postsViewController: UIViewController, UINavigationControllerDelegate, CLL
                         // Read file
                         let file: BPFile = obj as! BPFile
                         self.post2.image = UIImage.init(data: file.fileData)!
+                        self.label2.text = self.captions[1]
                         print("The download was successful")
                     }
                     else
@@ -137,6 +148,7 @@ class postsViewController: UIViewController, UINavigationControllerDelegate, CLL
                         // Read file
                         let file: BPFile = obj as! BPFile
                         self.post3.image = UIImage.init(data: file.fileData)!
+                        self.label3.text = self.captions[2]
                         print("The download was successful")
                     }
                     else
@@ -154,6 +166,7 @@ class postsViewController: UIViewController, UINavigationControllerDelegate, CLL
                         // Read file
                         let file: BPFile = obj as! BPFile
                         self.post4.image = UIImage.init(data: file.fileData)!
+                        self.label4.text = self.captions[3]
                         print("The download was successful")
                     }
                     else
@@ -171,6 +184,7 @@ class postsViewController: UIViewController, UINavigationControllerDelegate, CLL
                         // Read file
                         let file: BPFile = obj as! BPFile
                         self.post5.image = UIImage.init(data: file.fileData)!
+                        self.label5.text = self.captions[4]
                         print("The download was successful")
                     }
                     else
@@ -188,6 +202,7 @@ class postsViewController: UIViewController, UINavigationControllerDelegate, CLL
                         // Read file
                         let file: BPFile = obj as! BPFile
                         self.post6.image = UIImage.init(data: file.fileData)!
+                        self.label6.text = self.captions[5]
                         print("The download was successful")
                     }
                     else
@@ -198,9 +213,7 @@ class postsViewController: UIViewController, UINavigationControllerDelegate, CLL
                     }
                 })
 
-            
-                
-            
+
             }
             else
             {
