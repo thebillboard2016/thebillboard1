@@ -37,115 +37,159 @@ class postsViewController: UIViewController {
     
     func loadPosts()
     {
-        // These are ID's of our simulated presentations because the GET query for location can't be accessed.
-        self.ids += ["bvc.GBcgHFDfPrKsc","bvc.zqcgHCtMPrKsc","bvc.MvtJJspfbsKsc","bvc.pCtJJPFpjsKsc","bvc.CHwjDNpMlsKsc","bvc.MDwDGFqmnsKsc"]
-
 
         
-        // ----------------  1  ----------------
-        // GET
-        Buddy.get("/pictures/\(self.ids[0])/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
-            if error == nil
-            {
-                // Read file
-                let file: BPFile = obj as! BPFile
-                self.post1.image = UIImage.init(data: file.fileData)!
-                print("The download was successful")
-            }
-            else
-            {
-                // Error downloading
-                print(error.debugDescription)
-                print("The download failed")
-            }
-        })
+        // This gets 1 location
         
-        // ----------------  2  ----------------
-        // GET
-        Buddy.get("/pictures/\(self.ids[1])/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
-            if error == nil
-            {
-                // Read file
-                let file: BPFile = obj as! BPFile
-                self.post2.image = UIImage.init(data: file.fileData)!
-                print("The download was successful")
-            }
-            else
-            {
-                // Error downloading
-                print(error.debugDescription)
-                print("The download failed")
-            }
-        })
-        // ----------------  3  ----------------
-        // GET
-        Buddy.get("/pictures/\(self.ids[2])/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
-            if error == nil
-            {
-                // Read file
-                let file: BPFile = obj as! BPFile
-                self.post3.image = UIImage.init(data: file.fileData)!
-                print("The download was successful")
-            }
-            else
-            {
-                // Error downloading
-                print(error.debugDescription)
-                print("The download failed")
-            }
-        })
-        // ----------------  4  ----------------
-        // GET
-        Buddy.get("/pictures/\(self.ids[3])/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
-            if error == nil
-            {
-                // Read file
-                let file: BPFile = obj as! BPFile
-                self.post4.image = UIImage.init(data: file.fileData)!
-                print("The download was successful")
-            }
-            else
-            {
-                // Error downloading
-                print(error.debugDescription)
-                print("The download failed")
-            }
-        })
-        // ----------------  5  ----------------
-        // GET
-        Buddy.get("/pictures/\(self.ids[4])/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
-            if error == nil
-            {
-                // Read file
-                let file: BPFile = obj as! BPFile
-                self.post5.image = UIImage.init(data: file.fileData)!
-                print("The download was successful")
-            }
-            else
-            {
-                // Error downloading
-                print(error.debugDescription)
-                print("The download failed")
-            }
-        })
-        // ----------------  6  ----------------
-        // GET
-        Buddy.get("/pictures/\(self.ids[5])/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
-            if error == nil
-            {
-                // Read file
-                let file: BPFile = obj as! BPFile
-                self.post6.image = UIImage.init(data: file.fileData)!
-                print("The download was successful")
-            }
-            else
-            {
-                // Error downloading
-                print(error.debugDescription)
-                print("The download failed")
-            }
-        })
+        let params: [String: Any?] = [
+            "ownerID": nil,
+            "contentType":nil,
+            "caption": nil,
+            "locationRange" : BPCoordinateRangeMake(42.372970, -71.117487, 20000),
+            "created": nil,
+            "lastModified": nil,
+            "sortOrder": nil,
+            "pagingToken": nil,
+            "title": nil
+        ]
         
+        
+        Buddy.get("/pictures", parameters: params, class: BPPageResults.self) { (back: Any, error: Error?) in
+            
+            if error == nil
+            {
+                // Convert return type to NSMutableDictionary
+                let results: BPPageResults = back as! BPPageResults
+                
+                for index in 0...5                {
+                    let dict: NSMutableDictionary = results.pageResults[index] as! NSMutableDictionary
+                    let id = dict["id"]!
+                    self.ids.append(id as! String)
+                    print(self.ids)
+                }
+                
+                
+                
+                
+                // ----------------  1  ----------------
+                // GET
+                Buddy.get("/pictures/\(self.ids[0])/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
+                    if error == nil
+                    {
+                        // Read file
+                        let file: BPFile = obj as! BPFile
+                        self.post1.image = UIImage.init(data: file.fileData)!
+                        print("The download was successful")
+                    }
+                    else
+                    {
+                        // Error downloading
+                        print(error.debugDescription)
+                        print("The download failed")
+                    }
+                })
+                
+                // ----------------  2  ----------------
+                // GET
+                Buddy.get("/pictures/\(self.ids[1])/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
+                    if error == nil
+                    {
+                        // Read file
+                        let file: BPFile = obj as! BPFile
+                        self.post2.image = UIImage.init(data: file.fileData)!
+                        print("The download was successful")
+                    }
+                    else
+                    {
+                        // Error downloading
+                        print(error.debugDescription)
+                        print("The download failed")
+                    }
+                })
+                // ----------------  3  ----------------
+                // GET
+                Buddy.get("/pictures/\(self.ids[2])/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
+                    if error == nil
+                    {
+                        // Read file
+                        let file: BPFile = obj as! BPFile
+                        self.post3.image = UIImage.init(data: file.fileData)!
+                        print("The download was successful")
+                    }
+                    else
+                    {
+                        // Error downloading
+                        print(error.debugDescription)
+                        print("The download failed")
+                    }
+                })
+                // ----------------  4  ----------------
+                // GET
+                Buddy.get("/pictures/\(self.ids[3])/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
+                    if error == nil
+                    {
+                        // Read file
+                        let file: BPFile = obj as! BPFile
+                        self.post4.image = UIImage.init(data: file.fileData)!
+                        print("The download was successful")
+                    }
+                    else
+                    {
+                        // Error downloading
+                        print(error.debugDescription)
+                        print("The download failed")
+                    }
+                })
+                // ----------------  5  ----------------
+                // GET
+                Buddy.get("/pictures/\(self.ids[4])/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
+                    if error == nil
+                    {
+                        // Read file
+                        let file: BPFile = obj as! BPFile
+                        self.post5.image = UIImage.init(data: file.fileData)!
+                        print("The download was successful")
+                    }
+                    else
+                    {
+                        // Error downloading
+                        print(error.debugDescription)
+                        print("The download failed")
+                    }
+                })
+                // ----------------  6  ----------------
+                // GET
+                Buddy.get("/pictures/\(self.ids[5])/file", parameters: nil, class: BPFile.self, callback: { (obj: Any?, error: Error?) in
+                    if error == nil
+                    {
+                        // Read file
+                        let file: BPFile = obj as! BPFile
+                        self.post6.image = UIImage.init(data: file.fileData)!
+                        print("The download was successful")
+                    }
+                    else
+                    {
+                        // Error downloading
+                        print(error.debugDescription)
+                        print("The download failed")
+                    }
+                })
+
+            
+                
+            
+            }
+            else
+            {
+                print(error.debugDescription)
+            }
+        }
+        
+
+        
+        
+        
+ 
         
         
         

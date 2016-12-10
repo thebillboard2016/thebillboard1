@@ -22,8 +22,8 @@ class mapViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
        
         
-        // Trying to access the GET query, but commented out to at least make a simluted version of The Billboard possible
-        
+        /*
+        // This gets 1 location
         
         let params: [String: Any?] = [
             "ownerID": nil,
@@ -64,7 +64,7 @@ class mapViewController: UIViewController, MKMapViewDelegate {
         }
         }
  
-        
+        */
         
         // Simulated annotations for presentation due to bug
         
