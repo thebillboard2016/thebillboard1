@@ -69,7 +69,7 @@ class imageAndCaptionViewController: UIViewController, UIImagePickerControllerDe
             
             let imageToSend: [String: Any?] = [
                 "data" : file,
-                "location" : BPCoordinateMake(uploadLocation.latitude, uploadLocation.latitude),
+                "location" : BPCoordinateMake(uploadLocation.latitude, uploadLocation.longitude),
                 "caption" : captionTextField.text!,
                 "tag" : nil,
                 "watermark" : nil,

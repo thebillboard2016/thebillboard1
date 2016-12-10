@@ -29,7 +29,7 @@ class mapViewController: UIViewController, MKMapViewDelegate {
             "ownerID": nil,
             "contentType":nil,
             "caption": nil,
-            "locationRange" : nil,
+            "locationRange" : BPCoordinateRangeMake(42.372970, -71.117487, 20000),
             "created": nil,
             "lastModified": nil,
             "sortOrder": nil,
@@ -44,12 +44,19 @@ class mapViewController: UIViewController, MKMapViewDelegate {
         {
             // Convert return type to NSMutableDictionary
             let results: BPPageResults = obj as! BPPageResults
-            let dict: NSMutableDictionary = results.pageResults[0] as! NSMutableDictionary
+            let dict0: NSMutableDictionary = results.pageResults[0] as! NSMutableDictionary
+        
+            // Get location
+            let location0: BPCoordinate = dict0["location"]! as! BPCoordinate
             
-            // This is the ID
-            print(dict["id"]!)
+            print(dict0.description)
+            print(" ")
             
+            print("Latitude is: \(location0.lat)")
+            print("Longitude is: \(location0.lng)")
+            print(" ")
             
+   
         }
         else
         {
