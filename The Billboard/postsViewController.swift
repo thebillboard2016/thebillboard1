@@ -8,8 +8,9 @@
 
 import UIKit
 import BuddySDK
+import CoreLocation
 
-class postsViewController: UIViewController {
+class postsViewController: UIViewController, UINavigationControllerDelegate, CLLocationManagerDelegate {
 
     // Properties
     @IBOutlet weak var post1: UIImageView!
@@ -24,8 +25,30 @@ class postsViewController: UIViewController {
     var ids = [String]()
     
     
+    // Location things
+    let locationManager = CLLocationManager()
+    var uploadLocation: CLLocationCoordinate2D = CLLocationCoordinate2D.init(latitude: 0, longitude: 0)
+    func locationManager(_ manager:CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        uploadLocation = (manager.location?.coordinate)!
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        theMapIsBroken()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Instantiate the loaction things
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
         
         // Load sample posts for simulation since query can't be accessed
         loadPosts()
@@ -203,6 +226,12 @@ class postsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func theMapIsBroken(){
+        let alertController = UIAlertController(title: "Location", message: "There is an unknown location service error.", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        present (alertController, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
